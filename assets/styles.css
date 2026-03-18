@@ -59,6 +59,8 @@
 html,body{height:100%}
 body{
   margin:0;
+  padding-left:max(24px, env(safe-area-inset-left));
+  padding-right:max(24px, env(safe-area-inset-right));
   font-family:var(--font);
   background:
     radial-gradient(900px 500px at 18% 20%, rgba(124,247,195,.18), transparent 60%),
@@ -83,9 +85,7 @@ kbd{
 .container{
   max-width:var(--max);
   margin:0 auto;
-  padding:0 20px;
-  padding-left:max(20px, env(safe-area-inset-left));
-  padding-right:max(20px, env(safe-area-inset-right));
+  padding:0;
 }
 .skip{
   position:absolute;left:-999px;top:8px;
@@ -126,10 +126,14 @@ kbd{
   color:var(--muted);
 }
 .nav__link:hover{background:var(--surface);color:var(--text)}
-.topbar__cta{display:flex;align-items:center;gap:10px}
+.topbar__cta,
+.topbar__cta--mobile{display:flex;align-items:center;gap:10px}
 
-.navm{display:none;position:relative}
-.navm{margin-left:0}
+@media (min-width: 768px){
+  .topbar__cta-download{display:none !important}
+}
+
+.navm{display:none;position:relative;margin-left:0}
 .navm__btn{list-style:none}
 .navm summary::-webkit-details-marker{display:none}
 .navm[open] .navm__btn{background:var(--surface2)}
@@ -489,10 +493,6 @@ kbd{
   .steps{grid-template-columns:1fr}
 }
 @media (max-width: 640px){
-  .container{
-    padding-left:max(24px, env(safe-area-inset-left));
-    padding-right:max(24px, env(safe-area-inset-right));
-  }
   .nav{display:none}
   .navm{display:block}
   .topbar__cta{display:flex;margin-left:auto}

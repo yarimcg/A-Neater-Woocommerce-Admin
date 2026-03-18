@@ -18,7 +18,7 @@
     <meta property="og:type" content="website" />
 
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="stylesheet" href="./assets/styles.css?v=1.0.0" />
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -32,25 +32,24 @@
 
         <nav class="nav" aria-label="Primary">
           <a class="nav__link" href="#features">Features</a>
-          <a class="nav__link" href="#before-after">Before/After</a>
+          <a class="nav__link" href="#before-after">Screenshots</a>
           <a class="nav__link" href="#install">Install</a>
-          <a class="nav__link" href="#faq">FAQ</a>
         </nav>
 
         <div class="topbar__cta">
-          <button class="btn btn--icon" type="button" data-theme-toggle aria-label="Toggle theme">
-            <span aria-hidden="true">◐</span>
-          </button>
-          <a class="btn btn--ghost" href="#install">Download</a>
-        </div>
+          <div class="topbar__cta--mobile">
+            <button class="btn btn--icon" type="button" data-theme-toggle aria-label="Toggle theme">
+              <span aria-hidden="true">◐</span>
+            </button>
+            <a class="btn btn--ghost topbar__cta-download" href="#install">Download</a>
+          </div>
 
         <details class="navm" aria-label="Mobile menu">
           <summary class="btn btn--ghost navm__btn" aria-label="Open menu">Menu</summary>
           <div class="navm__panel" role="menu">
             <a class="navm__link" href="#features" role="menuitem">Features</a>
-            <a class="navm__link" href="#before-after" role="menuitem">Before/After</a>
+            <a class="navm__link" href="#before-after" role="menuitem">Screenshots</a>
             <a class="navm__link" href="#install" role="menuitem">Install</a>
-            <a class="navm__link" href="#faq" role="menuitem">FAQ</a>
           </div>
         </details>
       </div>
@@ -71,7 +70,7 @@
 
             <div class="hero__actions">
               <a class="btn btn--primary" href="#features">Explore features</a>
-              <a class="btn btn--secondary" href="#before-after">See before/after</a>
+              <a class="btn btn--secondary" href="#before-after">See screenshots</a>
             </div>
 
             <dl class="hero__meta" aria-label="Quick shortcut">
@@ -404,7 +403,7 @@
         </div>
         <div class="footer__right">
           <a class="footer__link" href="#features">Features</a>
-          <a class="footer__link" href="#before-after">Before/After</a>
+          <a class="footer__link" href="#before-after">Screenshots</a>
           <a class="footer__link" href="#install">Install</a>
         </div>
       </div>
@@ -422,7 +421,6 @@
         <a class="fabMenu__link" href="#features" role="menuitem">Features</a>
         <a class="fabMenu__link" href="#before-after" role="menuitem">Screenshots</a>
         <a class="fabMenu__link" href="#install" role="menuitem">Install</a>
-        <a class="fabMenu__link" href="#faq" role="menuitem">FAQ</a>
       </div>
     </div>
 
