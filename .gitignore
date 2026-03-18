@@ -35,6 +35,12 @@ wp-config.php
 # htaccess
 /.htaccess
 
+# macOS
+.DS_Store
+
+# Local build artifacts
+a-neater-woocommerce-admin.zip
+
 # All plugins
 #
 # Note: If you wish to whitelist plugins,

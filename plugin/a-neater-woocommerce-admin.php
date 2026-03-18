@@ -3,7 +3,7 @@
  * Plugin Name:       A Neater Woocommerce Admin
  * Plugin URI:        https://www.evolvedwebsites.com.au/plugins/neater-wp/
  * Description:       Modernise the WooCommerce admin with a clean interface, smart customer insights, lightning-fast order search, and manual On Sale category control
- * Version:           12.4.6
+ * Version:           12.4.7
  * Requires at least: 6.4
  * Requires PHP:      7.4
  * Author:            Evolved Websites Pty Ltd
@@ -26,7 +26,7 @@ if (!defined("ABSPATH")) {
 
 // Define plugin version constant
 if (!defined("EWNEATER_VERSION")) {
-    define("EWNEATER_VERSION", "12.4.6");
+    define("EWNEATER_VERSION", "12.4.7");
 }
 
 // Define Quick Find version constant (kept in sync with plugin version)
