@@ -2,6 +2,8 @@
   const root = document.documentElement;
   const btn = document.querySelector("[data-theme-toggle]");
   const toTop = document.querySelector("[data-to-top]");
+  const fabMenu = document.querySelector("[data-fab-menu]");
+  const fabMenuToggle = document.querySelector("[data-fab-menu-toggle]");
 
   const storageKey = "aneater_site_theme";
 
@@ -31,21 +33,45 @@
     });
   }
 
-  if (toTop) {
+  const isMobileMq = window.matchMedia("(max-width: 640px)");
+
+  const updateFloatingButtons = () => {
+    const shouldShow = isMobileMq.matches && window.scrollY > 420;
+    if (toTop) toTop.classList.toggle("is-visible", shouldShow);
+    if (fabMenu) fabMenu.classList.toggle("is-visible", shouldShow);
+    if (!shouldShow && fabMenu) fabMenu.classList.remove("is-open");
+  };
+
+  if (toTop || fabMenu) {
     const mq = window.matchMedia("(max-width: 640px)");
+    window.addEventListener("scroll", updateFloatingButtons, { passive: true });
+    window.addEventListener("resize", updateFloatingButtons);
+    mq.addEventListener?.("change", updateFloatingButtons);
+    updateFloatingButtons();
+  }
 
-    const updateToTop = () => {
-      const shouldShow = mq.matches && window.scrollY > 420;
-      toTop.classList.toggle("is-visible", shouldShow);
-    };
-
-    window.addEventListener("scroll", updateToTop, { passive: true });
-    window.addEventListener("resize", updateToTop);
-    mq.addEventListener?.("change", updateToTop);
-    updateToTop();
-
+  if (toTop) {
     toTop.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  if (fabMenu && fabMenuToggle) {
+    fabMenuToggle.addEventListener("click", () => {
+      fabMenu.classList.toggle("is-open");
+    });
+
+    fabMenu.addEventListener("click", (e) => {
+      const link = e.target instanceof Element ? e.target.closest("a") : null;
+      if (link) {
+        fabMenu.classList.remove("is-open");
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!fabMenu.classList.contains("is-open")) return;
+      if (e.target instanceof Node && fabMenu.contains(e.target)) return;
+      fabMenu.classList.remove("is-open");
     });
   }
 })();
