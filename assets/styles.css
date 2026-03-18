@@ -80,7 +80,13 @@ kbd{
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);
 }
 
-.container{max-width:var(--max);margin:0 auto;padding:0 20px}
+.container{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 20px;
+  padding-left:max(20px, env(safe-area-inset-left));
+  padding-right:max(20px, env(safe-area-inset-right));
+}
 .skip{
   position:absolute;left:-999px;top:8px;
   background:var(--surface2);border:1px solid var(--line);
@@ -123,6 +129,7 @@ kbd{
 .topbar__cta{display:flex;align-items:center;gap:10px}
 
 .navm{display:none;position:relative}
+.navm{margin-left:0}
 .navm__btn{list-style:none}
 .navm summary::-webkit-details-marker{display:none}
 .navm[open] .navm__btn{background:var(--surface2)}
@@ -133,7 +140,7 @@ kbd{
   min-width: 210px;
   border-radius: 16px;
   border:1px solid var(--line);
-  background: color-mix(in srgb, var(--bg) 70%, transparent);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   box-shadow: var(--shadow);
@@ -419,8 +426,16 @@ kbd{
   .steps{grid-template-columns:1fr}
 }
 @media (max-width: 640px){
+  .container{
+    padding-left:max(24px, env(safe-area-inset-left));
+    padding-right:max(24px, env(safe-area-inset-right));
+  }
   .nav{display:none}
   .navm{display:block}
+  .navm{margin-left:auto}
+  .topbar__cta{display:none}
+  .btn{padding:8px 12px;border-radius:12px}
+  .btn--icon{padding:8px 10px;min-width:40px}
   .grid{grid-template-columns:1fr}
   .ba__grid{grid-template-columns:1fr}
   .hero__metaItem{min-width:unset;width:100%}
