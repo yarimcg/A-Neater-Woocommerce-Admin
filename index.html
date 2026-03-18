@@ -37,6 +37,13 @@
           <a class="nav__link" href="#faq">FAQ</a>
         </nav>
 
+        <div class="topbar__cta">
+          <button class="btn btn--icon" type="button" data-theme-toggle aria-label="Toggle theme">
+            <span aria-hidden="true">◐</span>
+          </button>
+          <a class="btn btn--ghost" href="#install">Download</a>
+        </div>
+
         <details class="navm" aria-label="Mobile menu">
           <summary class="btn btn--ghost navm__btn" aria-label="Open menu">Menu</summary>
           <div class="navm__panel" role="menu">
@@ -46,13 +53,6 @@
             <a class="navm__link" href="#faq" role="menuitem">FAQ</a>
           </div>
         </details>
-
-        <div class="topbar__cta">
-          <button class="btn btn--icon" type="button" data-theme-toggle aria-label="Toggle theme">
-            <span aria-hidden="true">◐</span>
-          </button>
-          <a class="btn btn--ghost" href="#install">Download</a>
-        </div>
       </div>
     </header>
 
@@ -207,28 +207,37 @@
                 <li>Reviews count surfaced in menus</li>
               </ul>
             </article>
-
-            <article class="card card--accent">
-              <h3 class="card__title">Made for speed</h3>
-              <p class="card__copy">
-                Built around fast interactions: keyboard-first flows, lightweight UI, and admin features that stay out of
-                the way until you need them.
-              </p>
-              <div class="callout">
-                <div class="callout__k">Tip</div>
-                <div class="callout__v">Press <kbd>/</kbd> from anywhere in wp-admin to start searching.</div>
-              </div>
-            </article>
           </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <header class="section__head">
+            <h2 class="section__title">Why it feels fast</h2>
+            <p class="section__lede">Keyboard-first flows and lightweight UI, designed to stay out of your way.</p>
+          </header>
+
+          <article class="card card--accent">
+            <h3 class="card__title">Made for speed</h3>
+            <p class="card__copy">
+              Built around fast interactions: keyboard-first flows, lightweight UI, and admin features that stay out of
+              the way until you need them.
+            </p>
+            <div class="callout">
+              <div class="callout__k">Tip</div>
+              <div class="callout__v">Press <kbd>/</kbd> from anywhere in wp-admin to start searching.</div>
+            </div>
+          </article>
         </div>
       </section>
 
       <section id="before-after" class="section section--alt">
         <div class="container">
           <header class="section__head">
-            <h2 class="section__title">Before / After</h2>
+            <h2 class="section__title">Screenshots</h2>
             <p class="section__lede">
-              Drop in your real screenshots later. These placeholders keep the layout polished until you have images.
+              Screnshots comign soon
             </p>
           </header>
 
@@ -355,13 +364,6 @@
               <code>a-neater-woocommerce-admin-v12.4.5.zip</code>.
             </p>
           </div>
-
-          <div class="note">
-            <div class="note__title">Cloudflare Pages</div>
-            <p class="note__copy">
-              This marketing site is static. Cloudflare Pages can publish the repo root (default) with no build step.
-            </p>
-          </div>
         </div>
       </section>
 
@@ -384,12 +386,6 @@
                 Use Quick Find (<kbd>/</kbd>) and the enhanced Orders list columns. Those two alone save time immediately.
               </div>
             </details>
-            <details class="faq__item">
-              <summary class="faq__q">Where do I add screenshots?</summary>
-              <div class="faq__a">
-                Put images in `site/assets/screens/` (create it) and replace the placeholders in the Before/After section.
-              </div>
-            </details>
           </div>
         </div>
       </section>
@@ -403,7 +399,7 @@
             <span class="brand__text">A Neater Admin</span>
           </div>
           <p class="footer__copy">
-            Built by Evolved Websites Pty Ltd.
+            Built by <a href="https://www.evolvedwebsites.com.au/" target="_blank" rel="noopener noreferrer">Evolved Websites Pty Ltd.</a>
           </p>
         </div>
         <div class="footer__right">
@@ -413,6 +409,10 @@
         </div>
       </div>
     </footer>
+
+    <button class="toTop" type="button" data-to-top aria-label="Back to top">
+      <span aria-hidden="true">↑</span>
+    </button>
 
     <script src="./assets/app.js" defer></script>
   </body>

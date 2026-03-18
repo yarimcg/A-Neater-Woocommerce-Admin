@@ -420,6 +420,26 @@ kbd{
 }
 .footer__link:hover{background:var(--surface);color:var(--text)}
 
+.toTop{
+  position:fixed;
+  right:max(14px, env(safe-area-inset-right));
+  bottom:max(16px, env(safe-area-inset-bottom));
+  z-index:40;
+  border:1px solid var(--line);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  color:var(--text);
+  border-radius: 999px;
+  padding:10px 12px;
+  min-width:44px;
+  min-height:44px;
+  display:none;
+  place-items:center;
+  box-shadow: var(--shadow);
+  cursor:pointer;
+}
+.toTop:hover{background: color-mix(in srgb, var(--bg) 96%, transparent)}
+.toTop.is-visible{display:grid}
+
 @media (max-width: 980px){
   .hero__inner{grid-template-columns:1fr;gap:16px}
   .grid{grid-template-columns: repeat(2, minmax(0, 1fr))}
@@ -432,10 +452,20 @@ kbd{
   }
   .nav{display:none}
   .navm{display:block}
-  .navm{margin-left:auto}
-  .topbar__cta{display:none}
+  .topbar__cta{display:flex;margin-left:auto}
+  .navm{margin-left:6px}
   .btn{padding:8px 12px;border-radius:12px}
   .btn--icon{padding:8px 10px;min-width:40px}
+  .topbar__cta .btn,
+  .navm__btn{
+    padding:7px 10px;
+    border-radius:12px;
+    font-size:.92rem;
+  }
+  .topbar__cta .btn--icon{
+    padding:7px 9px;
+    min-width:38px;
+  }
   .grid{grid-template-columns:1fr}
   .ba__grid{grid-template-columns:1fr}
   .hero__metaItem{min-width:unset;width:100%}
