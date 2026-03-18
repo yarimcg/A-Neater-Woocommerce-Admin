@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>A Neater WooCommerce Admin — Modern WooCommerce admin UX</title>
+    <meta
+      name="description"
+      content="A Neater WooCommerce Admin modernises the WooCommerce admin with a clean interface, smart customer insights, lightning-fast order search, and manual control over the Sale category."
+    />
+
+    <meta property="og:title" content="A Neater WooCommerce Admin" />
+    <meta
+      property="og:description"
+      content="Modern WooCommerce admin UX: Quick Find, customer revenue insights, order list enhancements, and On Sale Manager."
+    />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="topbar" role="banner">
+      <div class="container topbar__inner">
+        <a class="brand" href="./" aria-label="A Neater WooCommerce Admin home">
+          <span class="brand__mark" aria-hidden="true">✓</span>
+          <span class="brand__text">A Neater Admin</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <a class="nav__link" href="#features">Features</a>
+          <a class="nav__link" href="#before-after">Before/After</a>
+          <a class="nav__link" href="#install">Install</a>
+          <a class="nav__link" href="#faq">FAQ</a>
+        </nav>
+
+        <div class="topbar__cta">
+          <a class="btn btn--ghost" href="#install">Get it</a>
+          <button class="btn btn--icon" type="button" data-theme-toggle aria-label="Toggle theme">
+            <span aria-hidden="true">◐</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="main" role="main">
+      <section class="hero">
+        <div class="container hero__inner">
+          <div class="hero__copy">
+            <p class="pill">WooCommerce • Admin UX • Power tools</p>
+            <h1 class="hero__title">
+              A sleek, modern WooCommerce admin — without changing how you work.
+            </h1>
+            <p class="hero__subtitle">
+              A Neater WooCommerce Admin modernises the WooCommerce back-office with a cleaner interface, faster
+              searching, smarter customer insights, and practical tooling for day-to-day ops.
+            </p>
+
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#features">Explore features</a>
+              <a class="btn btn--secondary" href="#before-after">See before/after</a>
+            </div>
+
+            <dl class="hero__meta" aria-label="Requirements">
+              <div class="hero__metaItem">
+                <dt>Requires</dt>
+                <dd>WP 6.4+, PHP 7.4+, WooCommerce</dd>
+              </div>
+              <div class="hero__metaItem">
+                <dt>Shortcut</dt>
+                <dd><kbd>/</kbd> opens Quick Find</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="hero__card" aria-label="Quick Find preview">
+            <div class="glass">
+              <div class="glass__top">
+                <div class="dots" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="glass__title">Quick Find</div>
+                <div class="glass__hint"><kbd>/</kbd></div>
+              </div>
+              <div class="glass__body">
+                <div class="search">
+                  <div class="search__icon" aria-hidden="true">⌕</div>
+                  <div class="search__input" aria-hidden="true">Search orders, customers, products…</div>
+                </div>
+                <ul class="results" aria-hidden="true">
+                  <li class="results__item">
+                    <span class="tag tag--ok">Processing</span>
+                    <span class="results__main">#10432 — J. Smith</span>
+                    <span class="results__sub">$128.50 • Sydney</span>
+                  </li>
+                  <li class="results__item results__item--active">
+                    <span class="tag tag--warn">On-hold</span>
+                    <span class="results__main">#10431 — Wholesale</span>
+                    <span class="results__sub">$1.2K • Melbourne</span>
+                  </li>
+                  <li class="results__item">
+                    <span class="tag">Customer</span>
+                    <span class="results__main">alex@example.com</span>
+                    <span class="results__sub">Revenue • Orders • Last order</span>
+                  </li>
+                </ul>
+                <p class="micro">
+                  Placeholder UI preview (not a real screenshot). Replace with your own images anytime.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero__bg" aria-hidden="true"></div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="container">
+          <header class="section__head">
+            <h2 class="section__title">What it does</h2>
+            <p class="section__lede">
+              Practical improvements that add up: faster workflows, clearer information, and less admin noise.
+            </p>
+          </header>
+
+          <div class="grid">
+            <article class="card">
+              <h3 class="card__title">Quick Find</h3>
+              <p class="card__copy">
+                Instant search for orders, customers, products, and admin menus. Press <kbd>/</kbd>, type, navigate with
+                ↑/↓, Enter to open, Esc to close.
+              </p>
+              <ul class="card__list">
+                <li>Orders + customers results, “Show more”, quick status links</li>
+                <li>Menu search is client-side (fast, no AJAX)</li>
+                <li>Optional preloading for near-instant results</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3 class="card__title">Order list enhancements</h3>
+              <p class="card__copy">
+                A more readable list table with helpful, glanceable customer context.
+              </p>
+              <ul class="card__list">
+                <li>Tags: Guest / New / Returning / Wholesale</li>
+                <li>Cust. Orders and Cust. Revenue columns</li>
+                <li>Payment method column with optional icons</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3 class="card__title">Customer revenue</h3>
+              <p class="card__copy">
+                A dedicated Customer Revenue screen: filter by timeframe, sort, search, rebuild indexes, and see first/last
+                order at a glance.
+              </p>
+              <ul class="card__list">
+                <li>Customers / Wholesalers / Guests / Company filtering</li>
+                <li>Purchase history + top purchased items</li>
+                <li>Progress tracking and logs</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3 class="card__title">On Sale Manager</h3>
+              <p class="card__copy">
+                Manual approval workflow for the <strong>Sale</strong> product category: decide what appears on the Sale page,
+                even when products have a sale price set.
+              </p>
+              <ul class="card__list">
+                <li>Approve/exclude with checkboxes (range select)</li>
+                <li>Auto-sync on product + variation save</li>
+                <li>Re-sync All for imports/restores/first setup</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3 class="card__title">Cleaner admin UI</h3>
+              <p class="card__copy">
+                Removes distractions and streamlines repetitive screens.
+              </p>
+              <ul class="card__list">
+                <li>Hide unnecessary user profile fields</li>
+                <li>Mobile-friendly orders list and order edit layout</li>
+                <li>Reviews count surfaced in menus</li>
+              </ul>
+            </article>
+
+            <article class="card card--accent">
+              <h3 class="card__title">Made for speed</h3>
+              <p class="card__copy">
+                Built around fast interactions: keyboard-first flows, lightweight UI, and admin features that stay out of
+                the way until you need them.
+              </p>
+              <div class="callout">
+                <div class="callout__k">Tip</div>
+                <div class="callout__v">Press <kbd>/</kbd> from anywhere in wp-admin to start searching.</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="before-after" class="section section--alt">
+        <div class="container">
+          <header class="section__head">
+            <h2 class="section__title">Before / After</h2>
+            <p class="section__lede">
+              Drop in your real screenshots later. These placeholders keep the layout polished until you have images.
+            </p>
+          </header>
+
+          <div class="ba">
+            <article class="ba__item">
+              <h3 class="ba__title">Orders list</h3>
+              <div class="ba__grid">
+                <figure class="shot">
+                  <div class="shot__ph" role="img" aria-label="Before screenshot placeholder">
+                    <span class="shot__label">Before</span>
+                    <span class="shot__hint">Add `orders-before.png`</span>
+                  </div>
+                </figure>
+                <figure class="shot">
+                  <div class="shot__ph shot__ph--after" role="img" aria-label="After screenshot placeholder">
+                    <span class="shot__label">After</span>
+                    <span class="shot__hint">Add `orders-after.png`</span>
+                  </div>
+                </figure>
+              </div>
+              <p class="ba__copy">
+                Clearer table, useful columns (Tags / Cust. Orders / Revenue), and a workflow that works on mobile too.
+              </p>
+            </article>
+
+            <article class="ba__item">
+              <h3 class="ba__title">Quick Find</h3>
+              <div class="ba__grid">
+                <figure class="shot">
+                  <div class="shot__ph" role="img" aria-label="Before screenshot placeholder">
+                    <span class="shot__label">Before</span>
+                    <span class="shot__hint">Add `quickfind-before.png`</span>
+                  </div>
+                </figure>
+                <figure class="shot">
+                  <div class="shot__ph shot__ph--after" role="img" aria-label="After screenshot placeholder">
+                    <span class="shot__label">After</span>
+                    <span class="shot__hint">Add `quickfind-after.png`</span>
+                  </div>
+                </figure>
+              </div>
+              <p class="ba__copy">
+                Keyboard-first order/customer/product search from any admin page.
+              </p>
+            </article>
+
+            <article class="ba__item">
+              <h3 class="ba__title">On Sale Manager</h3>
+              <div class="ba__grid">
+                <figure class="shot">
+                  <div class="shot__ph" role="img" aria-label="Before screenshot placeholder">
+                    <span class="shot__label">Before</span>
+                    <span class="shot__hint">Add `sale-before.png`</span>
+                  </div>
+                </figure>
+                <figure class="shot">
+                  <div class="shot__ph shot__ph--after" role="img" aria-label="After screenshot placeholder">
+                    <span class="shot__label">After</span>
+                    <span class="shot__hint">Add `sale-after.png`</span>
+                  </div>
+                </figure>
+              </div>
+              <p class="ba__copy">
+                Manual approvals for the Sale category, plus a reliable “Re-sync All” safety button.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="install" class="section">
+        <div class="container">
+          <header class="section__head">
+            <h2 class="section__title">Install</h2>
+            <p class="section__lede">
+              This is a WordPress plugin. Install it like any plugin, then open <strong>A Neater Admin</strong> in wp-admin.
+            </p>
+          </header>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step__n">1</div>
+              <div class="step__body">
+                <h3 class="step__title">Upload / install</h3>
+                <p class="step__copy">Upload the plugin folder to `wp-content/plugins/` or install from a zip.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step__n">2</div>
+              <div class="step__body">
+                <h3 class="step__title">Activate</h3>
+                <p class="step__copy">Activate in Plugins. The plugin will create its indexes/tables as needed.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step__n">3</div>
+              <div class="step__body">
+                <h3 class="step__title">Use Quick Find</h3>
+                <p class="step__copy">Press <kbd>/</kbd> from anywhere in wp-admin to search instantly.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="note">
+            <div class="note__title">Cloudflare Pages</div>
+            <p class="note__copy">
+              This marketing site is a static folder. Configure Cloudflare Pages to publish the `site/` directory.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section section--alt">
+        <div class="container">
+          <header class="section__head">
+            <h2 class="section__title">FAQ</h2>
+          </header>
+
+          <div class="faq">
+            <details class="faq__item">
+              <summary class="faq__q">Does this change my storefront theme?</summary>
+              <div class="faq__a">
+                No. It focuses on wp-admin and WooCommerce management workflows.
+              </div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__q">What’s the fastest way to feel the difference?</summary>
+              <div class="faq__a">
+                Use Quick Find (<kbd>/</kbd>) and the enhanced Orders list columns. Those two alone save time immediately.
+              </div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__q">Where do I add screenshots?</summary>
+              <div class="faq__a">
+                Put images in `site/assets/screens/` (create it) and replace the placeholders in the Before/After section.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__left">
+          <div class="brand brand--small">
+            <span class="brand__mark" aria-hidden="true">✓</span>
+            <span class="brand__text">A Neater Admin</span>
+          </div>
+          <p class="footer__copy">
+            Built by Evolved Websites Pty Ltd.
+          </p>
+        </div>
+        <div class="footer__right">
+          <a class="footer__link" href="#features">Features</a>
+          <a class="footer__link" href="#before-after">Before/After</a>
+          <a class="footer__link" href="#install">Install</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/app.js" defer></script>
+  </body>
+</html>
