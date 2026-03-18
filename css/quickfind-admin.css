@@ -1,0 +1,1140 @@
+/*==========================================================================
+ * A Neater Woocommerce Admin - Quick Find (admin bar + results + Admin Menus page)
+ *
+ * Styles for: Quick Find dropdown, admin bar input, Admin Menus visibility page
+ *
+ * COLOUR SCHEME: Edit only the block below to change colours for Orders,
+ * Customers, and Admin Menus. All Quick Find UI uses these variables.
+ ==========================================================================*/
+
+/* =========================================================================
+   Quick Find colour scheme – edit this block to change Orders / Customers / Admin Menus
+   ========================================================================= */
+:root {
+    /* Orders (section heading + result rows) */
+    --ewneater-qf-orders-bg: #e9f7ef;
+    --ewneater-qf-orders-bg-row: #f5fbf7;
+    --ewneater-qf-orders-accent: #2f9e65;
+    --ewneater-qf-orders-text: #1f7a4a;
+
+    /* Order Statuses (section heading + result rows) – teal, distinct from Orders */
+    --ewneater-qf-order-statuses-bg: #e6f4f1;
+    --ewneater-qf-order-statuses-bg-row: #f0faf8;
+    --ewneater-qf-order-statuses-accent: #0d9488;
+    --ewneater-qf-order-statuses-text: #0f766e;
+
+    /* Customers (section heading + result rows) */
+    --ewneater-qf-customers-bg: #e8f2ff;
+    --ewneater-qf-customers-bg-row: #f5faff;
+    --ewneater-qf-customers-accent: #3b82f6;
+    --ewneater-qf-customers-text: #1e4ea8;
+
+    /* Products (section heading + result rows) */
+    --ewneater-qf-products-bg: #e2e8f0;
+    --ewneater-qf-products-bg-row: #f1f5f9;
+    --ewneater-qf-products-accent: #475569;
+    --ewneater-qf-products-text: #334155;
+
+    /* Admin Menus (dropdown + visibility page use same vars) */
+    --ewneater-qf-menus-bg: #f8f9fa;
+    --ewneater-qf-menus-bg-row: #fafbfc;
+    --ewneater-qf-menus-accent: #4b5563;
+    --ewneater-qf-menus-text: #1f2937;
+
+    /* Shared: input */
+    --ewneater-qf-input-border: #ccc;
+    --ewneater-qf-input-focus: #2271b1;
+    --ewneater-qf-input-placeholder: #999;
+    --ewneater-qf-input-bg: #fff;
+    --ewneater-qf-input-text: #000;
+
+    /* Shared: results dropdown */
+    --ewneater-qf-results-bg: #fff;
+    --ewneater-qf-results-border: #e2e4e7;
+    --ewneater-qf-results-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --ewneater-qf-result-item-border: #f0f0f1;
+    --ewneater-qf-count-bg: #f8f9fa;
+    --ewneater-qf-count-text: #666;
+    --ewneater-qf-count-link-hover: #1d2327;
+    --ewneater-qf-detail-color: #666;
+
+    /* Shared: highlight, close, version */
+    --ewneater-qf-highlight-bg: rgb(250, 236, 114);
+    --ewneater-qf-close-bg: #f8f9fa;
+    --ewneater-qf-close-text: #666;
+    --ewneater-qf-close-hover: #d63638;
+    --ewneater-qf-close-bottom-bg: #f0f0f1;
+    --ewneater-qf-close-bottom-border: #dcdcde;
+    --ewneater-qf-close-bottom-hover-bg: #e0e0e0;
+    --ewneater-qf-close-bottom-hover-text: #135e96;
+    --ewneater-qf-version-text: #cccccc;
+    --ewneater-qf-version-hover: #135e96;
+    --ewneater-qf-version-hover-bg: rgba(19, 94, 150, 0.1);
+
+    /* Shared: loading / searching */
+    --ewneater-qf-loading-bg: #f8f9fa;
+    --ewneater-qf-searching-bg: #f0f0f1;
+}
+
+/* =========================================================================
+   1. Admin Menus page (Quick Find Menus)
+   ========================================================================= */
+.ewneater-quick-find-menu-save {
+    position: sticky;
+    bottom: 0;
+    padding: 12px 0;
+    margin-top: 10px;
+}
+.ewneater-quick-find-menu-save button {
+    margin-left: 70px;
+}
+.ewneater-quick-find-menu-save .button-primary {
+    background: #2271b1;
+    border-color: #2271b1;
+    color: #fff;
+}
+.ewneater-quick-find-menu-save .button-primary:hover,
+.ewneater-quick-find-menu-save .button-primary:focus {
+    background: #135e96;
+    border-color: #135e96;
+    color: #fff;
+}
+.ewneater-quick-find-menu-heading {
+    background: var(--ewneater-qf-menus-bg);
+    color: var(--ewneater-qf-menus-text);
+    font-weight: 700;
+}
+.ewneater-quick-find-menu-row {
+    background: var(--ewneater-qf-menus-bg-row);
+}
+.ewneater-quick-find-menu-row:hover {
+    background: var(--ewneater-qf-menus-bg);
+}
+.ewneater-quick-find-menu-index-link {
+    font-size: 12px;
+    color: var(--ewneater-qf-version-text);
+    text-decoration: none;
+    margin-left: 12px;
+}
+.ewneater-quick-find-menu-index-link:hover {
+    color: var(--ewneater-qf-version-hover);
+    text-decoration: underline;
+}
+
+/* =========================================================================
+   1c. Toolbar Icons page – toggle and plugin badges
+   ========================================================================= */
+.ewneater-toolbar-actions-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    margin-bottom: 14px;
+}
+.ewneater-toolbar-icons-filter {
+    width: 160px;
+    padding: 5px 8px;
+    font-size: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fafafa;
+    color: #555;
+}
+.ewneater-toolbar-icons-filter::placeholder {
+    color: #999;
+}
+.ewneater-toolbar-icons-filter:focus {
+    outline: none;
+    border-color: #ccc;
+    background: #fff;
+}
+.ewneater-toolbar-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+.ewneater-toolbar-toggle input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.ewneater-toolbar-toggle-slider {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+    background: #ccc;
+    border-radius: 24px;
+    transition: background 0.2s;
+}
+.ewneater-toolbar-toggle-slider::before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.2s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.ewneater-toolbar-toggle input:checked + .ewneater-toolbar-toggle-slider {
+    background: var(--ewneater-qf-orders-accent);
+}
+.ewneater-toolbar-toggle input:checked + .ewneater-toolbar-toggle-slider::before {
+    transform: translateX(20px);
+}
+.ewneater-toolbar-toggle-label {
+    font-weight: 600;
+    color: var(--ewneater-qf-menus-text);
+}
+.ewneater-toolbar-toggle-desc {
+    margin: 0;
+    font-size: 13px;
+    color: var(--ewneater-qf-detail-color);
+}
+.ewneater-toolbar-plugin-cell {
+    font-size: 12px;
+    color: var(--ewneater-qf-detail-color);
+}
+.ewneater-toolbar-plugin-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: var(--ewneater-qf-menus-bg);
+    border-radius: 4px;
+    font-size: 11px;
+    color: var(--ewneater-qf-menus-text);
+    cursor: help;
+    border: 1px solid var(--ewneater-qf-results-border);
+}
+.ewneater-toolbar-plugin-badge:hover {
+    background: var(--ewneater-qf-menus-bg-row);
+    border-color: var(--ewneater-qf-menus-accent);
+}
+/* Save button: dimmed when no changes, active when dirty */
+.ewneater-toolbar-save-btn--dimmed {
+    opacity: 0.6;
+    cursor: default;
+}
+/* Table section: clear that this controls what is visible in the toolbar */
+.ewneater-toolbar-table-title {
+    margin-top: 24px;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+.ewneater-toolbar-table-desc {
+    margin-bottom: 14px;
+}
+.ewneater-toolbar-icon-col,
+.ewneater-toolbar-icon-cell {
+    max-width: 180px;
+    font-size: 13px;
+}
+.ewneater-toolbar-icon-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.ewneater-toolbar-icon-preview {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+    color: inherit;
+    opacity: 0.85;
+}
+.ewneater-toolbar-icon-label {
+    min-width: 0;
+}
+.ewneater-toolbar-plugin-col,
+.ewneater-toolbar-plugin-cell {
+    max-width: 110px;
+}
+.ewneater-toolbar-visibility-col {
+    width: 320px;
+}
+.ewneater-toolbar-pills-cell {
+    vertical-align: middle;
+}
+.ewneater-toolbar-radio-sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+.ewneater-toolbar-pills-wrap {
+    position: relative;
+}
+.ewneater-toolbar-pills-wrap input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+}
+.ewneater-toolbar-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+}
+.ewneater-pill-single-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    align-items: flex-end;
+}
+.ewneater-pill-sub-row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    padding-left: 4px;
+    border-left: 2px solid var(--ewneater-qf-results-border);
+    transition: opacity 0.15s ease;
+}
+.ewneater-pill-sub-row--hidden {
+    display: none !important;
+}
+.ewneater-pill {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--ewneater-qf-menus-text);
+    background: var(--ewneater-qf-menus-bg);
+    border: 1px solid var(--ewneater-qf-results-border);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.ewneater-pill:hover {
+    background: var(--ewneater-qf-menus-bg-row);
+    border-color: var(--ewneater-qf-menus-accent);
+}
+.ewneater-pill--selected {
+    background: var(--ewneater-qf-orders-accent);
+    border-color: var(--ewneater-qf-orders-accent);
+    color: #fff;
+}
+.ewneater-pill--selected:hover {
+    background: var(--ewneater-qf-orders-accent);
+    border-color: var(--ewneater-qf-orders-accent);
+    color: #fff;
+}
+.ewneater-pill--sub {
+    padding: 4px 10px;
+    font-size: 11px;
+}
+.ewneater-pill--sub.ewneater-pill--selected {
+    background: var(--ewneater-qf-menus-accent);
+    border-color: var(--ewneater-qf-menus-accent);
+}
+/* Required icons: always visible, not toggleable */
+.ewneater-pill--required {
+    cursor: default;
+    background: #e8f5e9;
+    color: #2e7d32;
+    border-color: #a5d6a7;
+}
+.ewneater-toolbar-row--required {
+    opacity: 1;
+}
+/* Toggle pill: selected = Visible (accent), not selected = Hidden (muted) */
+.ewneater-pill-toggle:not(.ewneater-pill--selected) {
+    background: #e0e0e0;
+    color: #555;
+    border-color: #ccc;
+}
+.ewneater-pill-toggle:not(.ewneater-pill--selected):hover {
+    background: #d0d0d0;
+    border-color: #bbb;
+}
+/* Dim row when icon is set to Hidden */
+.ewneater-toolbar-icons-table tbody tr.ewneater-toolbar-row--hidden {
+    opacity: 0.55;
+    background: rgba(0, 0, 0, 0.03);
+}
+.ewneater-toolbar-icons-table tbody tr.ewneater-toolbar-row--hidden:hover {
+    opacity: 0.75;
+}
+/* Unsaved indicator column */
+.ewneater-toolbar-unsaved-col {
+    width: 32px;
+    text-align: center;
+}
+.ewneater-toolbar-unsaved-cell {
+    width: 32px;
+    text-align: center;
+    vertical-align: middle;
+}
+.ewneater-toolbar-unsaved-icon {
+    display: none;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    color: var(--ewneater-qf-orders-accent);
+    pointer-events: none;
+    cursor: default;
+}
+.ewneater-toolbar-row--dirty .ewneater-toolbar-unsaved-icon {
+    display: inline-block;
+}
+/* Preview mode banner under the toolbar (teal to match A Neater Admin) – absolute so no layout jump */
+.ewneater-preview-mode-banner {
+    position: fixed;
+    top: 32px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px 16px;
+    background: #0d9488;
+    color: #fff;
+    font-weight: 600;
+    font-size: 13px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 99998;
+}
+/* In preview mode: highlight toolbar items that are set to Hidden */
+#wpadminbar .ewneater-toolbar-preview-hidden > .ab-item {
+    outline: 2px solid #0d9488;
+    outline-offset: -2px;
+    background: rgba(13, 148, 136, 0.15) !important;
+    border-radius: 2px;
+}
+
+/* Toolbar Icons page: use A Neater Admin colour scheme (teal) */
+.ewneater-page--toolbar-icons .ewneater-toolbar-icons-table thead th {
+    background: linear-gradient(180deg, #f0fdfa 0%, #ccfbf1 100%);
+    color: #0f766e;
+    border-bottom-color: rgba(13, 148, 136, 0.3);
+}
+.ewneater-page--toolbar-icons .ewneater-toolbar-toggle input:checked + .ewneater-toolbar-toggle-slider {
+    background: var(--ewneater-accent);
+}
+.ewneater-page--toolbar-icons .ewneater-pill--selected {
+    background: var(--ewneater-accent);
+    border-color: var(--ewneater-accent);
+}
+.ewneater-page--toolbar-icons .ewneater-pill--selected:hover {
+    background: var(--ewneater-accent);
+    border-color: var(--ewneater-accent);
+}
+.ewneater-page--toolbar-icons .ewneater-pill--sub.ewneater-pill--selected {
+    background: var(--ewneater-accent);
+    border-color: var(--ewneater-accent);
+}
+.ewneater-page--toolbar-icons .ewneater-toolbar-unsaved-icon {
+    color: var(--ewneater-accent);
+}
+.ewneater-page--toolbar-icons .ewneater-toolbar-save-btn:not(.ewneater-toolbar-save-btn--dimmed),
+.ewneater-page--toolbar-icons .ewneater-quick-find-menu-save .button-primary:not(.ewneater-toolbar-save-btn--dimmed) {
+    background: var(--ewneater-accent);
+    border-color: var(--ewneater-accent);
+}
+.ewneater-page--toolbar-icons .ewneater-toolbar-save-btn:not(.ewneater-toolbar-save-btn--dimmed):hover,
+.ewneater-page--toolbar-icons .ewneater-toolbar-save-btn:not(.ewneater-toolbar-save-btn--dimmed):focus,
+.ewneater-page--toolbar-icons .ewneater-quick-find-menu-save .button-primary:not(.ewneater-toolbar-save-btn--dimmed):hover,
+.ewneater-page--toolbar-icons .ewneater-quick-find-menu-save .button-primary:not(.ewneater-toolbar-save-btn--dimmed):focus {
+    background: #0f766e;
+    border-color: #0f766e;
+    color: #fff;
+}
+/* When Interactive Mode is on: override allowlist and show all root-default items */
+html.ewneater-toolbar-preview-all #wp-admin-bar-root-default > li {
+    display: block !important;
+}
+/* Interactive Mode: toolbar icons are clickable to toggle visibility */
+html.ewneater-toolbar-interactive #wp-admin-bar-root-default > li > .ab-item {
+    cursor: pointer;
+}
+/* Required icons: not toggleable in Interactive Mode */
+html.ewneater-toolbar-interactive #wp-admin-bar-menu-toggle > .ab-item,
+html.ewneater-toolbar-interactive #wp-admin-bar-wp-logo > .ab-item {
+    cursor: default;
+}
+
+/* =========================================================================
+   2. Admin bar – Quick Find input
+   ========================================================================= */
+#wp-admin-bar-ewneater-quick-find {
+    margin-left: 8px !important;
+}
+#wp-admin-bar-ewneater-quick-find > .ab-item {
+    padding: 0;
+}
+#wpadminbar .ewneater-quick-find-container {
+    padding: 0;
+    position: relative;
+}
+#wpadminbar #ewneater-quick-find-input {
+    width: 350px;
+    height: 26px !important;
+    min-height: 24px !important;
+    line-height: 24px !important;
+    margin-top: 0px;
+    padding: 0 6px 0 6px;
+    border: 1px solid var(--ewneater-qf-input-border);
+    border-radius: 4px;
+    font-size: 16px;
+    color: var(--ewneater-qf-input-text);
+    transition: all 0.2s ease;
+    box-sizing: content-box;
+}
+#ewneater-quick-find-input:focus {
+    background: var(--ewneater-qf-input-bg);
+    border-color: var(--ewneater-qf-input-focus);
+    box-shadow: 0 0 0 1px var(--ewneater-qf-input-focus);
+    outline: none;
+}
+#wpadminbar #ewneater-quick-find-input::placeholder {
+    color: var(--ewneater-qf-input-placeholder);
+    font-style: italic;
+    opacity: 1;
+    font-size: 13px;
+}
+#wpadminbar #ewneater-quick-find-input::-webkit-input-placeholder {
+    color: var(--ewneater-qf-input-placeholder);
+    font-style: italic;
+}
+#wpadminbar #ewneater-quick-find-input:-ms-input-placeholder {
+    color: var(--ewneater-qf-input-placeholder);
+    font-style: italic;
+}
+#wpadminbar #ewneater-quick-find-input::-ms-input-placeholder {
+    color: var(--ewneater-qf-input-placeholder);
+    font-style: italic;
+}
+
+/* =========================================================================
+   3. Results dropdown – container and layout
+   ========================================================================= */
+#ewneater-quick-find-results {
+    position: fixed;
+    top: 29px;
+    left: 442px;
+    width: 363px;
+    background: var(--ewneater-qf-results-bg);
+    border: 1px solid var(--ewneater-qf-results-border);
+    border-radius: 4px;
+    box-shadow: var(--ewneater-qf-results-shadow);
+    z-index: 99999;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+}
+.results-content {
+    height: 360px;
+    overflow-y: auto;
+}
+
+/* =========================================================================
+   4. Results – base result item and count row
+   ========================================================================= */
+#ewneater-quick-find-results .result-item,
+#ewneater-quick-find-results a.result-item {
+    display: block;
+    padding: 12px 14px;
+    line-height: 1.5;
+    border-bottom: 1px solid var(--ewneater-qf-result-item-border);
+    cursor: pointer;
+    transition: background 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    background: var(--ewneater-qf-results-bg);
+}
+#ewneater-quick-find-results .result-item:first-child,
+#ewneater-quick-find-results a.result-item:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+#ewneater-quick-find-results .result-item:last-child,
+#ewneater-quick-find-results a.result-item:last-child {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom: none;
+}
+#ewneater-quick-find-results .result-item.count,
+#ewneater-quick-find-results a.result-item.count {
+    color: var(--ewneater-qf-count-text);
+    cursor: default;
+    padding: 5px 14px;
+    border-bottom: none;
+    background: var(--ewneater-qf-count-bg);
+    text-decoration: none;
+}
+#ewneater-quick-find-results .ewneater-count-row {
+    cursor: default;
+}
+#ewneater-quick-find-results .ewneater-count-link {
+    color: var(--ewneater-qf-count-text);
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 4px;
+}
+#ewneater-quick-find-results .ewneater-count-link:hover {
+    color: var(--ewneater-qf-count-link-hover);
+}
+#ewneater-quick-find-results .results-content .ewneater-count-row:hover {
+    background: var(--ewneater-qf-count-bg);
+    border-left: none;
+    padding-left: 14px;
+}
+#ewneater-quick-find-results .result-item span.details {
+    color: var(--ewneater-qf-detail-color);
+    font-size: 13px;
+    margin-left: 8px;
+}
+
+/* =========================================================================
+   5. Results – section headings (Orders, Customers, Admin Menus)
+   ========================================================================= */
+#ewneater-quick-find-results .result-item.count.result-section {
+    font-weight: 700;
+    font-size: 14px;
+    padding: 7px 14px;
+}
+#ewneater-quick-find-results .result-item.count.result-section.order-statuses-heading {
+    background: var(--ewneater-qf-order-statuses-bg);
+    color: var(--ewneater-qf-order-statuses-text);
+    border-top: 2px solid var(--ewneater-qf-order-statuses-accent);
+    border-bottom: none;
+}
+#ewneater-quick-find-results .result-item.count.result-section.orders-heading {
+    background: var(--ewneater-qf-orders-bg);
+    color: var(--ewneater-qf-orders-text);
+    border-top: 2px solid var(--ewneater-qf-orders-accent);
+    border-bottom: none;
+}
+#ewneater-quick-find-results .result-item.count.result-section.customers-heading {
+    background: var(--ewneater-qf-customers-bg);
+    color: var(--ewneater-qf-customers-text);
+    border-top: 2px solid var(--ewneater-qf-customers-accent);
+    border-bottom: none;
+}
+#ewneater-quick-find-results .result-item.count.result-section.products-heading {
+    background: var(--ewneater-qf-products-bg);
+    color: var(--ewneater-qf-products-text);
+    border-top: 2px solid var(--ewneater-qf-products-accent);
+    border-bottom: none;
+}
+
+/* Section heading links (Orders, Customers, Products) – same look, full-row click */
+#ewneater-quick-find-results .result-item.count.result-section .ewneater-section-heading-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    margin: -7px -14px;
+    padding: 7px 14px;
+}
+#ewneater-quick-find-results .result-item.count.result-section .ewneater-section-heading-link:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+#ewneater-quick-find-results .result-item.count.result-section.admin-menus-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: var(--ewneater-qf-menus-bg);
+    color: var(--ewneater-qf-menus-text);
+    padding: 14px 14px;
+    border-top: 1px solid var(--ewneater-qf-menus-accent);
+}
+#ewneater-quick-find-results .result-item.count.result-section.admin-menus-heading .ewneater-admin-menus-heading-link {
+    font-size: 11px;
+    color: var(--ewneater-qf-version-text);
+    text-decoration: none;
+    flex-shrink: 0;
+}
+#ewneater-quick-find-results .result-item.count.result-section.admin-menus-heading .ewneater-admin-menus-heading-link:hover {
+    color: var(--ewneater-qf-version-hover);
+    text-decoration: underline;
+}
+
+#ewneater-quick-find-results .result-item.count.ewneater-section-footer {
+    font-size: 12px;
+    color: var(--ewneater-qf-count-text);
+    padding: 6px 14px 10px;
+    font-weight: normal;
+}
+
+#ewneater-quick-find-results .ewneater-show-more {
+    margin-left: 8px;
+    padding: 2px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    background: var(--ewneater-qf-count-bg);
+    border: 1px solid var(--ewneater-qf-results-border);
+    border-radius: 3px;
+    color: var(--ewneater-qf-count-link-hover);
+}
+
+#ewneater-quick-find-results .ewneater-show-more:hover:not(:disabled) {
+    background: var(--ewneater-qf-result-item-border);
+}
+
+#ewneater-quick-find-results .ewneater-show-more:disabled {
+    cursor: default;
+    opacity: 0.7;
+}
+
+/* Subtle "Updating…" when server search is running in background (cached results shown) */
+#ewneater-quick-find-results .result-item.count.ewneater-bg-search-msg {
+    font-size: 11px;
+    font-style: italic;
+    padding: 4px 14px 8px;
+    margin: 0;
+    border: none;
+    background: transparent;
+}
+
+#ewneater-quick-find-results .ewneater-bg-search-msg.ewneater-bg-search-orders {
+    color: var(--ewneater-qf-orders-text);
+    opacity: 0.75;
+}
+
+#ewneater-quick-find-results .ewneater-bg-search-msg.ewneater-bg-search-customers {
+    color: var(--ewneater-qf-customers-text);
+    opacity: 0.75;
+}
+
+#ewneater-quick-find-results .ewneater-bg-search-msg.ewneater-bg-search-products {
+    color: var(--ewneater-qf-products-text);
+    opacity: 0.75;
+}
+/* No hover effect on section headings */
+#ewneater-quick-find-results .results-content .orders-heading:hover {
+    background: var(--ewneater-qf-orders-bg);
+    border-left: none;
+    padding-left: 14px;
+}
+#ewneater-quick-find-results .results-content .customers-heading:hover {
+    background: var(--ewneater-qf-customers-bg);
+    border-left: none;
+    padding-left: 14px;
+}
+#ewneater-quick-find-results .results-content .products-heading:hover {
+    background: var(--ewneater-qf-products-bg);
+    border-left: none;
+    padding-left: 14px;
+}
+#ewneater-quick-find-results .results-content .admin-menus-heading:hover,
+#ewneater-quick-find-results .results-content [data-section-heading="menus"]:hover {
+    background: var(--ewneater-qf-menus-bg);
+    border-left: none;
+    padding-left: 14px;
+}
+
+/* =========================================================================
+   6. Results – result rows (Orders, Customers, Products, Admin menus)
+   Theme colours only; !important overrides WP admin blue link/focus styles.
+   ========================================================================= */
+#ewneater-quick-find-results a.order-result {
+    background: var(--ewneater-qf-orders-bg-row);
+    color: var(--ewneater-qf-orders-text) !important;
+}
+#ewneater-quick-find-results .results-content a.order-result:hover,
+#ewneater-quick-find-results .results-content a.order-result.selected,
+#ewneater-quick-find-results .results-content a.order-result:focus,
+#ewneater-quick-find-results .results-content a.order-result:focus-visible {
+    background: var(--ewneater-qf-orders-bg) !important;
+    border-left: 2px solid var(--ewneater-qf-orders-accent);
+    padding-left: 12px;
+    color: var(--ewneater-qf-input-text) !important;
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+#ewneater-quick-find-results .results-content a.order-result:active {
+    background: var(--ewneater-qf-orders-bg) !important;
+    border-top: 2px solid var(--ewneater-qf-orders-accent) !important;
+    border-left: 2px solid var(--ewneater-qf-orders-accent) !important;
+    color: var(--ewneater-qf-input-text) !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+#ewneater-quick-find-results a.order-status-result {
+    background: var(--ewneater-qf-order-statuses-bg-row);
+    color: var(--ewneater-qf-order-statuses-text) !important;
+}
+#ewneater-quick-find-results .results-content a.order-status-result:hover,
+#ewneater-quick-find-results .results-content a.order-status-result.selected,
+#ewneater-quick-find-results .results-content a.order-status-result:focus,
+#ewneater-quick-find-results .results-content a.order-status-result:focus-visible {
+    background: var(--ewneater-qf-order-statuses-bg) !important;
+    border-left: 2px solid var(--ewneater-qf-order-statuses-accent);
+    padding-left: 12px;
+    color: var(--ewneater-qf-input-text) !important;
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+#ewneater-quick-find-results .results-content a.order-status-result:active {
+    background: var(--ewneater-qf-order-statuses-bg) !important;
+    border-top: 2px solid var(--ewneater-qf-order-statuses-accent) !important;
+    border-left: 2px solid var(--ewneater-qf-order-statuses-accent) !important;
+    color: var(--ewneater-qf-input-text) !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+#ewneater-quick-find-results a.customer-result {
+    background: var(--ewneater-qf-customers-bg-row);
+    color: var(--ewneater-qf-customers-text) !important;
+}
+#ewneater-quick-find-results .results-content a.customer-result:hover,
+#ewneater-quick-find-results .results-content a.customer-result.selected,
+#ewneater-quick-find-results .results-content a.customer-result:focus,
+#ewneater-quick-find-results .results-content a.customer-result:focus-visible {
+    background: var(--ewneater-qf-customers-bg) !important;
+    border-left: 2px solid var(--ewneater-qf-customers-accent);
+    padding-left: 12px;
+    color: var(--ewneater-qf-input-text) !important;
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+#ewneater-quick-find-results .results-content a.customer-result:active {
+    background: var(--ewneater-qf-customers-bg) !important;
+    border-top: 2px solid var(--ewneater-qf-customers-accent) !important;
+    border-left: 2px solid var(--ewneater-qf-customers-accent) !important;
+    color: var(--ewneater-qf-input-text) !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+#ewneater-quick-find-results .ewneater-product-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: var(--ewneater-qf-products-bg-row);
+    border-bottom: 1px solid var(--ewneater-qf-result-item-border);
+    transition: background 0.2s ease;
+}
+#ewneater-quick-find-results .ewneater-product-row:hover,
+#ewneater-quick-find-results .ewneater-product-row:has(a.product-result.selected),
+#ewneater-quick-find-results .ewneater-product-row:has(a.product-result:focus),
+#ewneater-quick-find-results .ewneater-product-row:has(a.product-result:focus-visible) {
+    background: var(--ewneater-qf-products-bg) !important;
+}
+#ewneater-quick-find-results .ewneater-product-row:has(a.product-result.selected),
+#ewneater-quick-find-results .ewneater-product-row:has(a.product-result:focus),
+#ewneater-quick-find-results .ewneater-product-row:has(a.product-result:focus-visible) {
+    border-left: 2px solid var(--ewneater-qf-products-accent);
+}
+#ewneater-quick-find-results .ewneater-product-row a.product-result {
+    flex: 1;
+    min-width: 0;
+    border-bottom: none;
+    background: transparent !important;
+}
+#ewneater-quick-find-results .ewneater-product-view-link {
+    flex-shrink: 0;
+    padding: 4px 8px;
+    color: var(--ewneater-qf-products-text);
+    opacity: 0.7;
+}
+#ewneater-quick-find-results .ewneater-product-view-link:hover {
+    opacity: 1;
+}
+#ewneater-quick-find-results .ewneater-product-view-link .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+#ewneater-quick-find-results a.product-result {
+    color: var(--ewneater-qf-products-text) !important;
+}
+#ewneater-quick-find-results .results-content a.product-result:hover,
+#ewneater-quick-find-results .results-content a.product-result.selected,
+#ewneater-quick-find-results .results-content a.product-result:focus,
+#ewneater-quick-find-results .results-content a.product-result:focus-visible {
+    background: transparent !important;
+    border-left: 2px solid var(--ewneater-qf-products-accent);
+    padding-left: 12px;
+    color: var(--ewneater-qf-input-text) !important;
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+#ewneater-quick-find-results .results-content .ewneater-product-row:has(a.product-result.selected) a.product-result,
+#ewneater-quick-find-results .results-content .ewneater-product-row:has(a.product-result:focus) a.product-result,
+#ewneater-quick-find-results .results-content .ewneater-product-row:has(a.product-result:focus-visible) a.product-result {
+    border-left: none;
+    padding-left: 12px;
+}
+#ewneater-quick-find-results .results-content a.product-result:active {
+    background: transparent !important;
+    border-top: 2px solid var(--ewneater-qf-products-accent) !important;
+    border-left: 2px solid var(--ewneater-qf-products-accent) !important;
+    color: var(--ewneater-qf-input-text) !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+#ewneater-quick-find-results a.admin-menu-result {
+    background: var(--ewneater-qf-menus-bg-row);
+    border-left: 2px solid var(--ewneater-qf-menus-bg-row);
+    padding-left: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    line-height: 1.35;
+    color: var(--ewneater-qf-menus-text) !important;
+}
+/* Hover only: no accent border */
+#ewneater-quick-find-results .results-content a.admin-menu-result:hover {
+    background: var(--ewneater-qf-menus-bg) !important;
+    border-left: 2px solid var(--ewneater-qf-menus-bg-row) !important;
+    border-top: none !important;
+    padding-left: 24px;
+    color: var(--ewneater-qf-menus-text) !important;
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+/* Selected / focus / active: show accent border */
+#ewneater-quick-find-results .results-content a.admin-menu-result.selected,
+#ewneater-quick-find-results .results-content a.admin-menu-result:focus,
+#ewneater-quick-find-results .results-content a.admin-menu-result:focus-visible,
+#ewneater-quick-find-results .results-content a.admin-menu-result:active {
+    background: var(--ewneater-qf-menus-bg) !important;
+    border-left: 2px solid var(--ewneater-qf-menus-accent) !important;
+    border-top: 2px solid var(--ewneater-qf-menus-accent) !important;
+    padding-left: 24px;
+    color: var(--ewneater-qf-input-text) !important;
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Override WP admin link/focus blue for any result link (hover/focus/active) */
+#ewneater-quick-find-results .results-content a.result-item:hover,
+#ewneater-quick-find-results .results-content a.result-item:focus,
+#ewneater-quick-find-results .results-content a.result-item:focus-visible,
+#ewneater-quick-find-results .results-content a.result-item:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* =========================================================================
+   7. Results – highlight and states
+   ========================================================================= */
+#ewneater-quick-find-results .highlight {
+    background-color: var(--ewneater-qf-highlight-bg);
+    padding: 0;
+    border-radius: 2px;
+}
+#ewneater-quick-find-results.initial-state {
+    height: auto;
+    min-height: 0;
+}
+#ewneater-quick-find-results.initial-state .results-content {
+    height: auto;
+    padding: 0 0 32px 0;
+}
+#ewneater-quick-find-results.initial-state .result-item {
+    padding: 8px 14px 0 14px;
+}
+#ewneater-quick-find-results.initial-state .ewneater-close-bottom {
+    display: none !important;
+}
+
+/* =========================================================================
+   8. Dropdown UI – close button, version link, close-bottom
+   ========================================================================= */
+.ewneater-close-x {
+    position: absolute;
+    top: -1px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    color: var(--ewneater-qf-close-text);
+    padding: 1.2px 7.4px;
+    line-height: 1;
+    margin-left: auto;
+    width: fit-content;
+    z-index: 1;
+    background: var(--ewneater-qf-close-bg);
+}
+.ewneater-close-x:hover {
+    color: var(--ewneater-qf-close-hover);
+}
+.ewneater-close-x::after {
+    content: "Esc to close";
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+    z-index: 2;
+}
+.ewneater-close-x:hover::after {
+    opacity: 1;
+}
+.ewneater-close-bottom {
+    position: sticky;
+    bottom: 0;
+    text-align: center;
+    padding: 10px;
+    background: var(--ewneater-qf-close-bottom-bg);
+    color: var(--ewneater-qf-count-text);
+    cursor: pointer;
+    font-size: 13px;
+    border-top: 1px solid var(--ewneater-qf-close-bottom-border);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.ewneater-close-bottom:hover {
+    background: var(--ewneater-qf-close-bottom-hover-bg);
+    color: var(--ewneater-qf-close-bottom-hover-text);
+}
+.ewneater-version-link {
+    position: absolute;
+    bottom: 7px;
+    right: 5px;
+    font-size: 11px;
+    color: var(--ewneater-qf-version-text);
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 2px 4px;
+    line-height: 1.2;
+    z-index: 1;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+.ewneater-version-link:hover {
+    color: var(--ewneater-qf-version-hover);
+    text-decoration: underline;
+    background: var(--ewneater-qf-version-hover-bg);
+}
+#ewneater-quick-find-results.searching .ewneater-version-link {
+    display: none;
+}
+
+/* =========================================================================
+   9. Input and loading states
+   ========================================================================= */
+.ewneater-loading #ewneater-quick-find-input {
+    background: var(--ewneater-qf-loading-bg);
+}
+#ewneater-quick-find-input.searching {
+    background-color: var(--ewneater-qf-searching-bg) !important;
+    border-color: var(--ewneater-qf-input-focus);
+}
+
+/* =========================================================================
+   10. Media query – mobile (admin bar + dropdown)
+   ========================================================================= */
+@media screen and (max-width: 782px) {
+    #wp-admin-bar-ewneater-quick-find {
+        display: inline-block !important;
+        width: auto;
+        padding: 0;
+        margin: 0 !important;
+        position: absolute;
+        right: 40px;
+        top: 0;
+    }
+    #wpadminbar #ewneater-quick-find-input {
+        width: 160px !important;
+        height: 32px !important;
+        min-height: 32px !important;
+        line-height: 32px !important;
+        margin: 7px 0;
+        padding: 0 8px;
+        font-size: 16px !important;
+    }
+    #ewneater-quick-find-results {
+        top: 46px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-height: 320px;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        border-radius: 0;
+    }
+    #ewneater-quick-find-results .result-item {
+        padding: 12px 14px;
+    }
+    .ewneater-close-bottom {
+        position: sticky;
+        bottom: 0;
+        background: var(--ewneater-qf-close-bottom-bg);
+        border-top: 1px solid var(--ewneater-qf-close-bottom-border);
+    }
+    .ewneater-version-link {
+        font-size: 10px;
+        right: 12px;
+        bottom: 8px;
+    }
+}
+
+/* =========================================================================
+   11. Order status colors (global, all admin pages)
+   ========================================================================= */
+.order-status-completed { color: #46b450; }
+.order-status-processing { color: #00a0d2; }
+.order-status-on-hold { color: #ffb900; }
+.order-status-cancelled { color: #dc3232; }
+.order-status-refunded { color: #826eb4; }
+.order-status-failed { color: #dc3232; }
+.order-status-trash { color: #dc3232; }
+.order-status-customer {
+    color: #1e4ea8;
+    font-size: 12px;
+    margin-left: 8px;
+}
+.order-status-wholesale {
+    color: #ffb900;
+    font-size: 12px;
+    margin-left: 8px;
+}
+.order-status-menu {
+    color: #1d2327;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+/* Product stock tags in Quick Find (same tag style as order status) */
+#past_orders .ewneater-stock-instock {
+    font-size: 0.9em;
+    padding: 2px 3px;
+    border-radius: 3px;
+    background-color: #c6e1c6;
+    color: #5b841b;
+}
+#past_orders .ewneater-stock-outofstock {
+    font-size: 0.9em;
+    padding: 2px 3px;
+    border-radius: 3px;
+    background-color: #eba3a3;
+    color: #761919;
+}
+#past_orders .ewneater-stock-onbackorder {
+    font-size: 0.9em;
+    padding: 2px 3px;
+    border-radius: 3px;
+    background-color: #f8dda7;
+    color: #94660c;
+}

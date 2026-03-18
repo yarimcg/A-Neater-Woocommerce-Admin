@@ -1,0 +1,39 @@
+/*==========================================================================
+ * ADMIN TOGGLER MODULE
+ *
+ * Collapsible sections with state saved per user.
+ ==========================================================================*/
+
+.ew-toggle-container {
+    margin: 20px 0;
+    border: 1px solid #ccd0d4;
+    background: #fff;
+}
+
+.ew-toggle-header {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+    padding: 15px 20px;
+    margin: 0;
+    border-bottom: 1px solid #ccd0d4;
+    background: #f8f9fa;
+}
+
+.ew-toggle-header .toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.ew-toggle-header.collapsed .toggle-icon {
+    transform: rotate(-90deg);
+}
+
+.ew-toggle-content {
+    padding: 20px;
+}
+
+.ew-toggle-content.collapsed {
+    display: none;
+}

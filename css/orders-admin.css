@@ -1,0 +1,876 @@
+/*==========================================================================
+ * ORDERS ADMIN PAGE STYLES
+ *
+ * Mobile-friendly WooCommerce orders page enhancement with:
+ * - Responsive mobile-first design with optimized layouts
+ * - Enhanced search with improved visibility and usability
+ * - Horizontal scrollable status filters with modern styling
+ * - Streamlined navigation and bulk action controls
+ * - Refined button and input styling across all devices
+ * - Touch-optimized interface for mobile/tablet use
+ ==========================================================================*/
+
+/* ==========================================
+   SCREEN META AND HEADER ELEMENTS
+=========================================== */
+
+.woocommerce-admin-page #contextual-help-link-wrap,
+#activity-panel-tab-activity {
+    display: none !important;
+}
+
+#screen-meta-links {
+    margin-bottom: 0px;
+}
+
+#screen-meta-links .show-settings,
+#activity-panel-tab-activity {
+    font-size: 12px;
+    color: #ccc !important;
+    border-color: #fff !important;
+}
+
+/* Orders list: Screen Options offset for layout */
+.woocommerce-embed-page #screen-meta-links {
+    position: absolute !important;
+    top: -62px;
+    right: 140px;
+    z-index: 9991;
+}
+
+/* Order edit: Screen Options offset right to make room for Last/Next buttons */
+body.post-php.post-type-shop_order #screen-meta-links,
+body.woocommerce_page_wc-orders #screen-meta-links {
+    position: absolute !important;
+    top: -62px;
+    right: 140px;
+    z-index: 9991;
+}
+
+.woocommerce-layout__header .woocommerce-layout__header-heading {
+    font-size: large;
+}
+
+/* Order edit: "Order" link back to all orders list */
+.woocommerce-layout__header-heading .ewneater-order-heading-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.woocommerce-layout__header-heading .ewneater-order-heading-link:hover {
+    color: #2271b1;
+    text-decoration: underline;
+}
+
+/* Ensure header accommodates heading + nav; nav aligns right */
+.woocommerce-layout__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+/* ==========================================
+   TOP NAVIGATION AND ACTIONS BAR
+=========================================== */
+.tablenav.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0 0;
+    margin: 5px 0 24px 0;
+}
+
+.tablenav .left-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+.tablenav .alignleft.actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: flex-start;
+    flex: 1.3;
+    margin: 0;
+}
+
+/* ==========================================
+   SEARCH BOX STYLING
+=========================================== */
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+    justify-content: flex-end;
+    flex: 1;
+    position: relative;
+    width: 100%;
+    opacity: 0.9;
+}
+
+#post-search-input {
+    padding: 6px 40px 6px 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #e2e2e2;
+    background-color: #f8f8f8;
+    color: #666;
+    height: 30px;
+    margin: 0;
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
+}
+
+#post-search-input::placeholder {
+    color: #999;
+    font-size: 13px;
+}
+
+/* ==========================================
+   SELECT AND BUTTON STYLING
+=========================================== */
+.tablenav select {
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 4px;
+    border: 1px solid #e2e2e2;
+    background-color: #f8f8f8;
+    color: #666;
+    height: 30px;
+    min-width: 180px;
+    line-height: 18px;
+}
+
+.tablenav select:focus {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+    outline: none;
+}
+
+.tablenav .button {
+    padding: 0 10px;
+    height: 30px;
+    background-color: #f8f8f8;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    color: #666;
+    font-size: 13px !important;
+    margin: 0 !important;
+}
+
+.tablenav .button:hover {
+    background-color: #f0f0f0;
+    border-color: #999;
+}
+
+/* ==========================================
+   STATUS FILTERS AND SUBSUBSUB STYLING
+=========================================== */
+.subsubsub-container {
+    position: relative;
+    background: #f0f0f0;
+    border-radius: 6px;
+    padding: 2px;
+    margin-bottom: 24px;
+}
+
+.subsubsub {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 6px 40px 6px 6px;
+    margin: 0;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.subsubsub::-webkit-scrollbar {
+    display: none;
+}
+
+.subsubsub li {
+    margin: 0;
+    float: none;
+    scroll-snap-align: start;
+}
+
+.subsubsub a {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 13px;
+    border-radius: 4px;
+    background: #fff;
+    margin-right: 4px;
+    text-align: center;
+    white-space: nowrap;
+    border: 1px solid #ddd;
+    text-decoration: none;
+}
+
+.subsubsub a .count {
+    color: #888;
+    font-weight: normal;
+}
+
+.subsubsub a.current {
+    background: #2271b1;
+    color: #fff;
+    border-color: #2271b1;
+}
+
+.subsubsub a.current .count {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ==========================================
+   UTILITY AND HELPER STYLES
+=========================================== */
+
+/* Orders only: hide Filter by Registered Customer dropdown */
+body.post-type-shop_order #posts-filter .select2-container,
+body.woocommerce_page_wc-orders #posts-filter .select2-container {
+    display: none !important;
+}
+
+.tablenav br.clear {
+    display: none;
+}
+
+/* Orders only: hide specific filters and pagination */
+body.post-type-shop_order .wrap h1.wp-heading-inline,
+body.woocommerce_page_wc-orders .wrap h1.wp-heading-inline,
+body.post-type-shop_order .tablenav #filter-by-date,
+body.woocommerce_page_wc-orders .tablenav #filter-by-date,
+body.post-type-shop_order .tablenav #filter-by-created-via,
+body.woocommerce_page_wc-orders .tablenav #filter-by-created-via,
+body.post-type-shop_order .tablenav #post-query-submit,
+body.woocommerce_page_wc-orders .tablenav #post-query-submit,
+body.post-type-shop_order .tablenav select[name="_customer_user"],
+body.woocommerce_page_wc-orders .tablenav select[name="_customer_user"],
+body.post-type-shop_order .tablenav #etcpf_custom_order_tags,
+body.woocommerce_page_wc-orders .tablenav #etcpf_custom_order_tags,
+body.post-type-shop_order .tablenav.top .tablenav-pages,
+body.woocommerce_page_wc-orders .tablenav.top .tablenav-pages {
+    display: none !important;
+}
+
+/* Reviews: hide top pagination (match Orders) */
+body.ewneater-reviews-page .tablenav.top .tablenav-pages {
+    display: none !important;
+}
+
+/* Users: hide top pagination (match Orders) */
+body.ewneater-users-page .tablenav.top .tablenav-pages,
+body.users .tablenav.top .tablenav-pages {
+    display: none !important;
+}
+
+/* Remove separators between status links */
+.subsubsub li:after,
+.subsubsub li:before,
+.subsubsub li .separator {
+    display: none !important;
+}
+
+/* ==========================================
+   PAGINATION STYLING (Reviews and other list tables)
+=========================================== */
+.tablenav-pages {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+}
+
+.tablenav-pages .pagination-links {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.tablenav-pages a,
+.tablenav-pages span.current,
+.tablenav-pages .paging-input {
+    padding: 4px 10px;
+    min-height: 30px;
+    line-height: 20px;
+    font-size: 13px;
+    border-radius: 4px;
+    border: 1px solid #e2e2e2;
+    background-color: #f8f8f8;
+    color: #666;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tablenav-pages a:hover {
+    background-color: #f0f0f0;
+    border-color: #999;
+    color: #333;
+}
+
+.tablenav-pages span.current {
+    background-color: #2271b1;
+    color: #fff;
+    border-color: #2271b1;
+}
+
+.tablenav-pages .paging-input {
+    border: none;
+    background: transparent;
+    padding: 0 6px;
+}
+
+.tablenav-pages span.disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE STYLES
+=========================================== */
+
+/* Hide Screen Options on mobile portrait; show on landscape or larger */
+@media screen and (max-width: 782px) and (orientation: portrait) {
+    #screen-meta-links,
+    body.post-php.post-type-shop_order #screen-meta-links,
+    body.woocommerce_page_wc-orders #screen-meta-links,
+    .woocommerce-embed-page #screen-meta-links {
+        display: none !important;
+    }
+}
+
+/* Admin bar: hide top-secondary on smaller screens to prevent overlap with Last/Next */
+@media screen and (max-width: 900px) {
+    #wpadminbar .ab-top-secondary {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    /* Hide Top Nav (Bulk Actions, User roles) on mobile portrait */
+    .tablenav .left-container,
+    .tablenav .alignleft.actions,
+    .wp-list-table thead {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 782px) {
+    /* Tablet/Landscape layout */
+    .tablenav.top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+/* Ensure search elements are properly styled on mobile */
+.woocommerce-embed-page .wrap p.search-box {
+    width: 100%;
+    margin: 0;
+}
+
+#post-search-input {
+    width: 100%;
+    max-width: none;
+}
+
+/* Mobile Search Button */
+#search-submit {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 30px;
+    background: transparent url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>') no-repeat center center;
+    border: none;
+    cursor: pointer;
+    opacity: 0.7;
+    padding: 0;
+    color: transparent;
+    font-size: 0;
+}
+
+#search-submit:hover {
+    opacity: 1;
+}
+
+/* Eliminates unnecessary top padding from All Orders and Order Edit page */
+.woocommerce-embed-page #wpbody .woocommerce-layout,
+.woocommerce-embed-page .woocommerce-layout__notice-list-hide + .wrap,
+.woocommerce-embed-page #poststuff {
+    padding-top: 0px !important;
+}
+
+/* Order Edit Page Mobile Layout */
+/* Reorders the order edit page layout on mobile - moves right sidebar (postbox-container-2) above main content (postbox-container-1) */
+/* Note: The CSS below required the JavaScript fix above to reliably override WP/WC admin JS on mobile */
+@media screen and (max-width: 782px) {
+    .post-type-shop_order #post-body.columns-2 {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .post-type-shop_order #post-body.columns-2 #postbox-container-2 {
+        order: 1 !important;
+        margin-bottom: 20px !important;
+    }
+    .post-type-shop_order #post-body.columns-2 #postbox-container-1 {
+        order: 2 !important;
+    }
+    .order_total.small-screen-only {
+        display: block;
+        font-weight: bold;
+        color: #333;
+        margin-top: 2px;
+        font-size: 1em;
+    }
+}
+
+/* ==========================================
+   ORDER INFO ELEMENTS
+=========================================== */
+.ewneater-order-info,
+.ewneater-order-info-total {
+    font-weight: normal;
+    font-size: 0.9em; /* Smaller font size for mobile */
+}
+
+.ewneater-order-info-total {
+    float: right;
+    display: block; /* Show on all devices by default */
+}
+
+/* Mobile-specific styling for order info */
+@media screen and (max-width: 782px) {
+    .ewneater-order-info,
+    .ewneater-order-info-total {
+        font-size: 0.8em; /* Even smaller on mobile */
+        display: block; /* Ensure it's visible */
+    }
+    
+    .ewneater-order-info-total {
+        display: block !important; /* Force show on mobile */
+        float: none; /* Remove float on mobile */
+        margin-top: 4px; /* Add some spacing */
+        clear: both; /* Ensure it's on a new line */
+    }
+}
+
+/* Hide duplicate totals that might be added by WooCommerce */
+.woocommerce-order-data h2 .ewneater-order-info-total + .ewneater-order-info-total,
+.woocommerce-order-data h2 .ewneater-order-info-total:not(:first-of-type) {
+    display: none !important;
+}
+
+/* ==========================================
+   ORDERS LIST BREADCRUMB (Orders > Status)
+=========================================== */
+.woocommerce-layout__header-heading .ewneater-orders-breadcrumb a,
+.wrap h1 .ewneater-orders-breadcrumb a {
+    color: #2271b1;
+    text-decoration: none;
+}
+.woocommerce-layout__header-heading .ewneater-orders-breadcrumb a:hover,
+.wrap h1 .ewneater-orders-breadcrumb a:hover {
+    color: #135e96;
+    text-decoration: underline;
+}
+
+/* ==========================================
+   H1 HEADER ORDER TOTAL
+=========================================== */
+.woocommerce-layout__header-heading .ewneater-header-total {
+    font-size: 1em;
+    font-weight: normal;
+    margin-left: 16px;
+    color: #444;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Show header total on scroll */
+.woocommerce-layout__header-heading .ewneater-header-total.show {
+    opacity: 1;
+}
+
+/* Mobile styling for header total */
+@media screen and (max-width: 782px) {
+    .woocommerce-layout__header-heading .ewneater-header-total {
+        font-size: 0.9em;
+        margin-left: 12px;
+        opacity: 1; /* Always visible on mobile - fixes iOS where scroll may not trigger */
+    }
+}
+
+/* ==========================================
+   ORDER EDIT: PREV/NEXT NAVIGATION
+   Buttons aligned right in header; mobile-friendly
+=========================================== */
+.ewneater-order-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.ewneater-order-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    min-height: 32px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #2271b1;
+    background: #f6f7f7;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.ewneater-order-nav-btn:hover {
+    color: #135e96;
+    background: #f0f0f1;
+    border-color: #8c8f94;
+}
+
+.ewneater-order-nav-btn.ewneater-order-nav-next {
+    margin-right: 20px;
+}
+
+/* Mobile: arrows only to save space */
+@media screen and (max-width: 782px) {
+    .ewneater-order-nav-btn.ewneater-order-nav-next {
+        margin-right: 5px;
+    }
+
+    .ewneater-order-nav {
+        gap: 4px;
+        flex-shrink: 0;
+    }
+
+    .ewneater-order-nav .ewneater-nav-text {
+        display: none;
+    }
+
+    .ewneater-order-nav-btn {
+        padding: 8px 12px;
+        font-size: 11px;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .ewneater-order-nav-btn:last-child {
+        margin-right: 5px;
+    }
+}
+
+/* ==========================================
+   ORDERS LIST SCROLL FUNCTIONALITY
+   
+   Controls visibility of order totals on scroll
+   for the orders list page
+=========================================== */
+.ewneater-order-info-total {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.ewneater-order-info-total.show {
+    opacity: 1;
+}
+
+/* Always show on mobile */
+@media screen and (max-width: 782px) {
+    .ewneater-order-info-total {
+        opacity: 1 !important;
+    }
+}
+
+/* ==========================================
+   ORDER DETAILS SECTION IMPROVEMENTS
+=========================================== */
+.woocommerce-order-data h2 {
+    position: relative; /* For proper positioning of appended elements */
+}
+
+/* Ensure proper spacing and prevent layout issues */
+.woocommerce-order-data h2 .ewneater-order-info,
+.woocommerce-order-data h2 .ewneater-order-info-total {
+    vertical-align: baseline;
+    line-height: 1.4;
+    display: inline-block; /* Ensure inline display */
+}
+
+/* Prevent any WooCommerce default styling from interfering */
+.woocommerce-order-data h2 .ewneater-order-info:not(:first-child) {
+    margin-left: 8px;
+}
+
+/* Ensure the total appears after the customer name with proper spacing */
+.woocommerce-order-data h2 .ewneater-order-info-total {
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Force display of order info elements */
+.woocommerce-order-data h2 .ewneater-order-info,
+.woocommerce-order-data h2 .ewneater-order-info-total {
+    display: inline-block !important;
+    visibility: visible !important;
+}
+
+/* Additional specificity to override any WooCommerce styles */
+.woocommerce-order-data h2.woocommerce-order-data__heading .ewneater-order-info,
+.woocommerce-order-data h2.woocommerce-order-data__heading .ewneater-order-info-total,
+.woocommerce-order-data > h2:first-child .ewneater-order-info,
+.woocommerce-order-data > h2:first-child .ewneater-order-info-total {
+    display: inline-block !important;
+    visibility: visible !important;
+}
+
+/* Ensure totals don't stack on mobile */
+@media screen and (max-width: 782px) {
+    .woocommerce-order-data h2 .ewneater-order-info-total {
+        display: block !important;
+        clear: both;
+        margin-top: 4px;
+        font-size: 0.75em;
+    }
+    
+    /* Hide any duplicate totals that might exist */
+    .woocommerce-order-data h2 .ewneater-order-info-total + .ewneater-order-info-total,
+    .woocommerce-order-data h2 .ewneater-order-info-total:nth-child(n+3) {
+        display: none !important;
+    }
+}
+
+/* ==========================================
+   ORDER STATUS TAGS
+=========================================== */
+.order-status.guest.ewneater-order-number-box {
+    background-color: #6c757d;
+    color: #fff;
+    border: 1px solid #666666;
+}
+
+.order-status.new_customer.ewneater-order-number-box {
+    background-color: #CAF0F8;
+    color: #000;
+}
+
+.order-status.returning_customer.ewneater-order-number-box {
+    background-color: #48CAE4;
+    color: #287281;
+}
+
+/* ==========================================
+   CUSTOMER INFO DISPLAY
+=========================================== */
+.ewneater-customer-info-box {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+.ewneater-customer-info-text {
+    margin: 0;
+    color: #6c757d;
+    font-size: 13px;
+}
+
+/* ==========================================
+   ORDER COUNT AND REVENUE BUTTONS
+=========================================== */
+.order-count-button {
+    display: inline-block;
+    padding: 2px 8px;
+    margin: 2px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 12px; /* Base font size */
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+}
+
+.order-count-button:hover {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+}
+
+/* Dynamic font sizing for order counts */
+.order-count-button[data-font-size="14"] { font-size: 14px; }
+.order-count-button[data-font-size="16"] { font-size: 16px; }
+.order-count-button[data-font-size="18"] { font-size: 18px; }
+.order-count-button[data-font-size="20"] { font-size: 20px; }
+
+.revenue-count-button {
+    display: inline-block;
+    padding: 2px 8px;
+    margin: 2px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 11px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+}
+
+.revenue-count-button:hover {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+}
+
+/* ==========================================
+   SEARCH AND FILTER ELEMENTS
+=========================================== */
+.ewneater-search-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ewneater-search-container {
+    position: relative;
+}
+
+.clear-search {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ==========================================
+   REVENUE COUNT BUTTON DYNAMIC STYLING
+=========================================== */
+.revenue-count-button[data-font-size="14"] { font-size: 14px; }
+.revenue-count-button[data-font-size="16"] { font-size: 16px; }
+.revenue-count-button[data-font-size="18"] { font-size: 18px; }
+.revenue-count-button[data-font-size="20"] { font-size: 20px; }
+
+/* ==========================================
+   CUSTOM COLUMN STYLING
+=========================================== */
+.order-count-button, .revenue-count-button {
+    display: inline-block;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 4px 6px;
+    background-color: #f2f2f2;
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#customer_orders_count {
+    width: 8ch;
+}
+
+#customer_revenue {
+    width: 12ch;  /* Increased from 8ch to 12ch */
+}
+
+#customer_orders_count,
+#customer_revenue,
+.customer_orders_count.column-customer_orders_count,
+.customer_revenue.column-customer_revenue {
+    text-align: center;
+}
+
+/* ==========================================
+   MOBILE TAGS STYLING
+   
+   Adds left margin to order tags on mobile view
+   to visually separate them from other content
+   in the Order column when displayed on small screens
+=========================================== */
+@media screen and (max-width: 782px) {
+    .order_tags {
+        margin-left: 10px;
+    }
+}
+
+/* ==========================================
+   TAG OVERLAPPING PREVENTION
+   
+   Prevents tags from overlapping by adding
+   proper spacing between them
+=========================================== */
+.ewneater-order-number-box {
+    display: inline-block !important;
+    margin-right: 5px !important;
+    margin-bottom: 2px !important;
+    vertical-align: top !important;
+}
+
+.order_tags .ewneater-order-number-box:last-child {
+    margin-right: 0 !important;
+}
+
+
+/* ==========================================
+   PAY COLUMN ICON SIZING
+   
+   Doubles the size of payment method icons
+   in the Pay column for better visibility
+=========================================== */
+.payment-method-display i.fab,
+.payment-method-display i.fas {
+    font-size: 2em !important;
+    vertical-align: middle;
+}
+
+/* ==========================================
+   PAY COLUMN WIDTH OPTIMIZATION
+   
+   Sets Pay column width to accommodate full
+   payment method text without wrapping
+=========================================== */
+.column-payment_method,
+th.column-payment_method,
+td.column-payment_method {
+    width: 10ch !important;
+    min-width: 10ch !important;
+    max-width: none !important;
+    text-align: center !important;
+}
+
+/* ==========================================
+   PAY COLUMN TEXT WRAPPING PREVENTION
+   
+   Prevents text wrapping in payment method
+   display to keep text on single line
+=========================================== */
+.payment-method-display {
+    white-space: nowrap !important;
+    display: block !important;
+}
+

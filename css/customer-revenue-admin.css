@@ -1,0 +1,568 @@
+/*==========================================================================
+ * CUSTOMER REVENUE ADMIN PAGE STYLES
+ *
+ * Styles for analytics, tables, summary stats, and responsive layout.
+ * Cards and tables match Dashboard .ewneater-dash-card style; orange scheme.
+ ==========================================================================*/
+
+.status-actions-container {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+.ewneater-dashboard-wrap .status-actions-container .card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #d97706;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    padding: 22px;
+    flex: 1;
+    min-width: 300px;
+    transition: box-shadow 0.2s ease;
+}
+.ewneater-dashboard-wrap .status-actions-container .card:hover {
+    box-shadow: 0 8px 24px rgba(217, 119, 6, 0.15);
+}
+.ewneater-dashboard-wrap .status-actions-container .card h2 {
+    margin: 0 0 14px;
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #b45309;
+}
+.index-actions {
+    margin-top: 15px;
+}
+.index-actions .button {
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+/* Analytics Styles – match .ewneater-dash-card, Customer revenue & reviews orange */
+.analytics-container {
+    margin: 0 0 20px 0;
+}
+.ewneater-dashboard-wrap .analytics-card,
+.ewneater-dashboard-wrap .ewneater-dash-card.analytics-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #d97706;
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    transition: box-shadow 0.2s ease;
+}
+.ewneater-dashboard-wrap .analytics-card:hover,
+.ewneater-dashboard-wrap .ewneater-dash-card.analytics-card:hover {
+    box-shadow: 0 8px 24px rgba(217, 119, 6, 0.15);
+}
+.ewneater-dashboard-wrap .analytics-card h2,
+.ewneater-dashboard-wrap .ewneater-dash-card.analytics-card h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #b45309;
+}
+.analytics-icon {
+    font-size: 18px;
+    margin-right: 8px;
+}
+.ewneater-dashboard-wrap .analytics-controls {
+    margin-bottom: 15px;
+    padding: 12px 14px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+}
+.analytics-controls label {
+    font-weight: 600;
+    margin-right: 10px;
+}
+.analytics-date-range {
+    min-width: 140px;
+}
+.analytics-summary {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+.ewneater-dashboard-wrap .analytics-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+    background: #fffbeb;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 100px;
+    border: 1px solid #fde68a;
+}
+.ewneater-dashboard-wrap .stat-label {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+.ewneater-dashboard-wrap .stat-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+}
+.ewneater-dashboard-wrap .analytics-chart-container {
+    margin: 15px 0;
+    text-align: center;
+    background: #fffbeb;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #fde68a;
+}
+.ewneater-dashboard-wrap .top-customers-list {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: #fff;
+}
+.customer-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+.ewneater-dashboard-wrap .customer-item:hover {
+    background-color: #fffbeb;
+}
+.customer-item:last-child {
+    border-bottom: none;
+}
+.customer-info {
+    flex: 1;
+}
+.customer-name {
+    font-weight: 600;
+    color: #23282d;
+    margin-bottom: 2px;
+}
+.customer-email {
+    font-size: 12px;
+    color: #666;
+}
+.customer-stats {
+    text-align: right;
+    font-size: 12px;
+}
+.ewneater-dashboard-wrap .customer-revenue {
+    font-weight: 600;
+    color: #b45309;
+    font-size: 14px;
+}
+.customer-orders {
+    color: #666;
+    margin-top: 2px;
+}
+.trend-indicator {
+    font-size: 16px;
+    margin-left: 5px;
+}
+.trend-up {
+    color: #00a32a;
+}
+.trend-down {
+    color: #d63638;
+}
+.trend-stable {
+    color: #dba617;
+}
+.analytics-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+.analytics-actions .button {
+    flex: 1;
+    text-align: center;
+}
+.loading-indicator {
+    color: #666;
+}
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.customer-type-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.customer-type-guest {
+    background-color: #6c757d;
+    color: #ffffff;
+}
+.customer-type-registered {
+    background-color: #48CAE4;
+    color: #287281;
+}
+.customer-type-wholesale {
+    background-color: #f8dda7;
+    color: #94660c;
+}
+.customer-type-company {
+    background-color: #000;
+    color: #fff;
+}
+/* Customer Revenue Data table – same structure as Quick Find Index, orange scheme */
+.ewneater-dashboard-wrap #customer-revenue-table {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+.ewneater-dashboard-wrap #customer-revenue-table thead th {
+    background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%);
+    color: #b45309;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 12px 14px;
+    border-bottom: 1px solid #fcd34d;
+}
+.ewneater-dashboard-wrap #customer-revenue-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+.ewneater-dashboard-wrap #customer-revenue-table tbody tr:nth-child(even) td {
+    background: #fafafa;
+}
+.ewneater-dashboard-wrap #customer-revenue-table tbody tr:hover td {
+    background: rgba(217, 119, 6, 0.06);
+}
+.ewneater-dashboard-wrap #customer-revenue-table tbody tr:nth-child(even):hover td {
+    background: rgba(217, 119, 6, 0.1);
+}
+.ewneater-dashboard-wrap .wp-list-table th a {
+    text-decoration: none;
+    color: inherit;
+}
+.ewneater-dashboard-wrap .wp-list-table th a:hover {
+    color: #b45309;
+}
+.sort-indicator {
+    margin-left: 5px;
+    opacity: 0.5;
+}
+.sort-indicator.active {
+    opacity: 1;
+}
+.tablenav.top {
+    margin-bottom: 10px;
+}
+.tablenav .alignleft.actions select,
+.tablenav .alignleft.actions input[type="search"] {
+    margin-right: 8px;
+}
+.tablenav .alignleft.actions select optgroup {
+    font-weight: bold;
+    font-style: normal;
+}
+.tablenav .alignleft.actions select optgroup[label="---"] {
+    border-top: 1px solid #ddd;
+    margin-top: 5px;
+    padding-top: 5px;
+}
+.tablenav .alignleft.actions select option {
+    font-weight: normal;
+    padding-left: 10px;
+}
+.progress-bar-container {
+    width: 100%;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.ewneater-dashboard-wrap .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #d97706 0%, #b45309 100%);
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+.progress-status {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+/* Analytics Container - 2 columns on desktop */
+.analytics-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.analytics-container .analytics-card {
+    flex: 1;
+    min-width: 0; /* Prevents flex items from overflowing */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .analytics-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Customer type badges */
+.customer-type-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.customer-type-guest {
+    background: #666;
+}
+
+.customer-type-registered {
+    background: #0073aa;
+}
+
+.customer-type-customer {
+    background: #00a32a;
+}
+
+.customer-type-wholesale {
+    background: #d63638;
+}
+
+.customer-type-company {
+    background: #8f2ce6;
+}
+
+.load-more-analytics {
+    min-width: 150px;
+    padding: 8px 16px;
+}
+
+.load-more-analytics:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Customer profile links */
+.ewneater-dashboard-wrap .customer-profile-link {
+    color: #b45309;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.ewneater-dashboard-wrap .customer-profile-link:hover {
+    color: #d97706;
+    text-decoration: underline;
+}
+
+/* Summary Stats Styles */
+.analytics-summary-stats {
+    margin-bottom: 30px;
+}
+
+.stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.ewneater-dashboard-wrap .stat-box {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #d97706;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    flex: 1;
+    min-width: 200px;
+    transition: box-shadow 0.2s ease;
+}
+.ewneater-dashboard-wrap .stat-box:hover {
+    box-shadow: 0 8px 24px rgba(217, 119, 6, 0.15);
+}
+
+.stat-icon {
+    font-size: 30px;
+    opacity: 0.8;
+}
+
+.stat-content {
+    flex: 1;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #23282d;
+}
+
+/* Sortable Table Styles */
+.sortable-header {
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+.sortable-header:hover {
+    background: #f0f0f1;
+}
+
+.sortable-header:hover .sort-indicator:after {
+    opacity: 0.8;
+}
+
+.sort-indicator {
+    position: relative;
+    display: inline-block;
+    margin-left: 8px;
+    width: 12px;
+    height: 12px;
+}
+
+.sort-indicator:before {
+    content: "\2195";
+    position: absolute;
+    top: -2px;
+    left: 0;
+    opacity: 0.7;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.sortable-header.sorted-desc .sort-indicator:before {
+    content: "\2193";
+    opacity: 1;
+    color: #b45309;
+    font-weight: bold;
+}
+
+.sortable-header.sorted-asc .sort-indicator:before {
+    content: "\2191";
+    opacity: 1;
+    color: #b45309;
+    font-weight: bold;
+}
+
+.sortable-header:hover .sort-indicator:before {
+    opacity: 1;
+}
+
+/* Fallback text indicators for sorting */
+.sortable-header.sorted-desc .sort-indicator:after {
+    content: " DESC";
+    position: absolute;
+    left: 15px;
+    top: -2px;
+    font-size: 8px;
+    color: #b45309;
+    opacity: 1;
+    font-weight: bold;
+}
+
+.sortable-header.sorted-asc .sort-indicator:after {
+    content: " ASC";
+    position: absolute;
+    left: 15px;
+    top: -2px;
+    font-size: 8px;
+    color: #b45309;
+    opacity: 1;
+    font-weight: bold;
+}
+
+.row-number-column {
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #666;
+}
+
+.graph-column {
+    width: 35px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.orders-column {
+    width: 60px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stats-grid {
+        gap: 15px;
+    }
+
+    .stat-box {
+        padding: 15px;
+        min-width: 150px;
+    }
+
+    .stat-icon {
+        font-size: 24px;
+    }
+
+    .stat-value {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .stat-box {
+        min-width: unset;
+    }
+} 

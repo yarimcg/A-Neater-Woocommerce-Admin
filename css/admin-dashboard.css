@@ -1,0 +1,212 @@
+/*==========================================================================
+ * A NEATER ADMIN DASHBOARD & SUBPAGES
+ *
+ * Styles for Dashboard, Quick Find Index, Quick Find Menus, Customer Revenue,
+ * and On Sale Manager dashboard card.
+ ==========================================================================*/
+
+.ewneater-dashboard-wrap {
+    --ewneater-accent: #0d9488;
+    --ewneater-accent-soft: rgba(13, 148, 136, 0.08);
+    --ewneater-blue: #2563eb;
+    --ewneater-blue-soft: rgba(37, 99, 235, 0.08);
+    --ewneater-violet: #7c3aed;
+    --ewneater-violet-soft: rgba(124, 58, 237, 0.08);
+    --ewneater-amber: #d97706;
+    --ewneater-amber-soft: rgba(217, 119, 6, 0.08);
+    max-width: 960px;
+}
+.ewneater-dashboard-wrap.ewneater-admin-page--full-width { max-width: none; }
+
+.ewneater-dashboard-wrap .ewneater-dash-title {
+    display: block;
+    margin: 0 0 24px;
+    padding: 20px 24px;
+    background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 50%, #f5f3ff 100%);
+    border: 1px solid rgba(13, 148, 136, 0.2);
+    border-radius: 12px;
+    font-size: 26px;
+    font-weight: 600;
+    color: #0f766e;
+    letter-spacing: -0.02em;
+}
+.ewneater-dashboard-wrap .ewneater-dash-title .ewneater-title-icon { font-size: 28px; width: 28px; height: 28px; margin: -6px 6px 0 0; vertical-align: middle; color: #0d9488; }
+.ewneater-dashboard-wrap .ewneater-dash-title a { color: inherit; text-decoration: none; }
+.ewneater-dashboard-wrap .ewneater-dash-title a:hover { color: #0d9488; }
+.ewneater-dashboard-wrap .ewneater-dash-version { font-size: 13px; color: #0d9488; font-weight: 500; background: rgba(255,255,255,0.7); padding: 4px 10px; border-radius: 6px; }
+.ewneater-dashboard-wrap .ewneater-dash-intro { margin: 0 0 28px; font-size: 15px; line-height: 1.6; color: #475569; }
+.ewneater-dashboard-wrap .ewneater-dash-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-bottom: 28px; }
+
+.ewneater-dashboard-wrap .ewneater-dash-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    padding: 22px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.ewneater-dashboard-wrap .ewneater-dash-card { border-left: 4px solid var(--ewneater-accent); }
+.ewneater-dashboard-wrap .ewneater-dash-card:hover { box-shadow: 0 8px 24px rgba(13, 148, 136, 0.12); }
+
+.ewneater-dashboard-wrap .ewneater-dash-card--quickfind { border-left: 4px solid #2f9e65; }
+.ewneater-dashboard-wrap .ewneater-dash-card--quickfind h3 { color: #1f7a4a; }
+.ewneater-dashboard-wrap .ewneater-dash-card--quickfind:hover { box-shadow: 0 8px 24px rgba(47, 158, 101, 0.12); }
+.ewneater-dashboard-wrap .ewneater-dash-card--quickfind .ewneater-dash-links .button { color: #1f7a4a; border-color: #2f9e65; }
+.ewneater-dashboard-wrap .ewneater-dash-card--quickfind .ewneater-dash-links .button:hover { color: #166534; border-color: #166534; background: #f0fdf4; }
+
+.ewneater-dashboard-wrap .ewneater-dash-card--revenue { border-left: 4px solid var(--ewneater-amber); }
+.ewneater-dashboard-wrap .ewneater-dash-card--revenue h3 { color: #b45309; }
+.ewneater-dashboard-wrap .ewneater-dash-card--revenue:hover { box-shadow: 0 8px 24px rgba(217, 119, 6, 0.15); }
+.ewneater-dashboard-wrap .ewneater-dash-card--revenue .ewneater-dash-links .button { color: #b45309; border-color: #d97706; }
+.ewneater-dashboard-wrap .ewneater-dash-card--revenue .ewneater-dash-links .button:hover { color: #92400e; border-color: #92400e; background: #fffbeb; }
+
+.ewneater-dashboard-wrap .ewneater-dash-card--on-sale { border-left: 4px solid #ea580c; }
+.ewneater-dashboard-wrap .ewneater-dash-card--on-sale h3 { color: #c2410c; }
+.ewneater-dashboard-wrap .ewneater-dash-card--on-sale:hover { box-shadow: 0 8px 24px rgba(234, 88, 12, 0.15); }
+.ewneater-dashboard-wrap .ewneater-dash-card--on-sale .ewneater-dash-links .button { color: #c2410c; border-color: #ea580c; }
+.ewneater-dashboard-wrap .ewneater-dash-card--on-sale .ewneater-dash-links .button:hover { color: #9a3412; border-color: #9a3412; background: #fff7ed; }
+
+.ewneater-dashboard-wrap .ewneater-dash-card--reviews { border-left: 4px solid #dc2626; }
+.ewneater-dashboard-wrap .ewneater-dash-card--reviews h3 { color: #b91c1c; }
+.ewneater-dashboard-wrap .ewneater-dash-card--reviews:hover { box-shadow: 0 8px 24px rgba(220, 38, 38, 0.15); }
+.ewneater-dashboard-wrap .ewneater-dash-card--reviews .ewneater-dash-links .button { color: #b91c1c; border-color: #dc2626; }
+.ewneater-dashboard-wrap .ewneater-dash-card--reviews .ewneater-dash-links .button:hover { color: #991b1b; border-color: #991b1b; background: #fef2f2; }
+
+.ewneater-dashboard-wrap .ewneater-dash-card h3 {
+    margin: 0 0 14px;
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #1e293b;
+}
+.ewneater-dashboard-wrap .ewneater-dash-card h3 .ewneater-dash-card-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    vertical-align: middle;
+    opacity: 0.8;
+}
+.ewneater-dashboard-wrap .ewneater-dash-card h3 .ewneater-dash-card-icon { color: var(--ewneater-accent); }
+.ewneater-dashboard-wrap .ewneater-dash-card--quickfind h3 .ewneater-dash-card-icon { color: #2f9e65; }
+.ewneater-dashboard-wrap .ewneater-dash-card--revenue h3 .ewneater-dash-card-icon { color: #d97706; }
+.ewneater-dashboard-wrap .ewneater-dash-card--on-sale h3 .ewneater-dash-card-icon { color: #ea580c; }
+.ewneater-dashboard-wrap .ewneater-dash-card--reviews h3 .ewneater-dash-card-icon { color: #dc2626; }
+.ewneater-dashboard-wrap .ewneater-dash-card ul { margin: 0; padding-left: 20px; line-height: 1.75; color: #64748b; font-size: 13px; }
+.ewneater-dashboard-wrap .ewneater-dash-card li { margin-bottom: 4px; }
+.ewneater-dashboard-wrap .ewneater-dash-card a { text-decoration: none; color: #0d9488; }
+.ewneater-dashboard-wrap .ewneater-dash-card a:hover { color: #0f766e; text-decoration: underline; }
+.ewneater-dashboard-wrap .ewneater-dash-links { margin-top: 16px; padding-top: 14px; border-top: 1px solid #e2e8f0; }
+.ewneater-dashboard-wrap .ewneater-dash-links .button { margin-right: 8px; margin-bottom: 4px; }
+
+.ewneater-dashboard-wrap .ewneater-dash-shortcut {
+    margin: 0 0 28px;
+    padding: 18px 24px;
+    background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+    border: 1px solid rgba(13, 148, 136, 0.3);
+    border-radius: 12px;
+    font-size: 14px;
+    color: #134e4a;
+}
+.ewneater-dashboard-wrap .ewneater-dash-shortcut kbd {
+    background: #fff;
+    border: 1px solid rgba(13, 148, 136, 0.4);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0d9488;
+    box-shadow: 0 1px 2px rgba(0,0,0,.06);
+}
+.ewneater-dashboard-wrap .ewneater-dash-actions { margin-top: 28px; }
+.ewneater-dashboard-wrap .ewneater-dash-actions .button-primary { background: #0d9488; border-color: #0d9488; border-radius: 8px; padding: 6px 16px; font-weight: 500; }
+.ewneater-dashboard-wrap .ewneater-dash-actions .button-primary:hover { background: #0f766e; border-color: #0f766e; }
+
+/* Shared table styling for admin subpages */
+.ewneater-dashboard-wrap .ewneater-admin-table,
+.ewneater-dashboard-wrap .wp-list-table.widefat,
+.ewneater-dashboard-wrap #customer-revenue-table {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    overflow: hidden;
+}
+.ewneater-dashboard-wrap .ewneater-admin-table thead th,
+.ewneater-dashboard-wrap .wp-list-table.widefat thead th {
+    background: #f8fafc;
+    color: #1e293b;
+    font-weight: 600;
+    padding: 12px 14px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 13px;
+}
+.ewneater-dashboard-wrap .ewneater-admin-table td,
+.ewneater-dashboard-wrap .wp-list-table.widefat td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+.ewneater-dashboard-wrap .ewneater-admin-table tbody tr:hover td,
+.ewneater-dashboard-wrap .wp-list-table.widefat tbody tr:hover td {
+    background: rgba(13, 148, 136, 0.04);
+}
+.ewneater-dashboard-wrap .ewneater-admin-table tbody tr:nth-child(even) td,
+.ewneater-dashboard-wrap .wp-list-table.widefat tbody tr:nth-child(even) td {
+    background: #fafafa;
+}
+.ewneater-dashboard-wrap .ewneater-admin-table tbody tr:nth-child(even):hover td,
+.ewneater-dashboard-wrap .wp-list-table.widefat tbody tr:nth-child(even):hover td {
+    background: rgba(13, 148, 136, 0.06);
+}
+
+/* Quick Find Menus & Index tables – green scheme */
+.ewneater-dashboard-wrap .ewneater-admin-table.ewneater-quick-find-menus-table,
+.ewneater-dashboard-wrap .ewneater-quick-find-menus-table,
+.ewneater-dashboard-wrap .ewneater-admin-table.ewneater-quick-find-index-table,
+.ewneater-dashboard-wrap .ewneater-quick-find-index-table {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    overflow: hidden;
+}
+.ewneater-dashboard-wrap .ewneater-quick-find-menus-table thead th,
+.ewneater-dashboard-wrap .ewneater-quick-find-index-table thead th {
+    background: linear-gradient(180deg, #f0fdf4 0%, #dcfce7 100%);
+    color: #166534;
+    font-weight: 600;
+    padding: 12px 14px;
+    border-bottom: 1px solid #bbf7d0;
+}
+.ewneater-dashboard-wrap .ewneater-quick-find-menus-table td,
+.ewneater-dashboard-wrap .ewneater-quick-find-index-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #f1f5f9;
+}
+.ewneater-dashboard-wrap .ewneater-quick-find-menus-table tbody tr:hover td,
+.ewneater-dashboard-wrap .ewneater-quick-find-index-table tbody tr:hover td {
+    background: rgba(47, 158, 101, 0.06);
+}
+.ewneater-dashboard-wrap .ewneater-quick-find-menus-table tbody tr:nth-child(even) td,
+.ewneater-dashboard-wrap .ewneater-quick-find-index-table tbody tr:nth-child(even) td {
+    background: #fafafa;
+}
+.ewneater-dashboard-wrap .ewneater-quick-find-menus-table tbody tr:nth-child(even):hover td,
+.ewneater-dashboard-wrap .ewneater-quick-find-index-table tbody tr:nth-child(even):hover td {
+    background: rgba(47, 158, 101, 0.08);
+}
+
+/* Remove WP .card top margin inside status-actions-container */
+.ewneater-dashboard-wrap .ewneater-admin-section.status-actions-container .ewneater-dash-card { margin-top: 0; }
+
+/* Admin menu awaiting-mod badge */
+.wp-menu-name .awaiting-mod {
+    background-color: #d63638;
+    color: #fff;
+    border-radius: 10px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: bold;
+    vertical-align: top;
+    margin-left: 5px;
+}

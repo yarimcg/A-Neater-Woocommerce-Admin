@@ -1,0 +1,210 @@
+/*==========================================================================
+ * A Neater Woocommerce Admin - Quick Find Index page
+ *
+ * Styles for: Search Index page (status cards, latest entries table, metadata)
+ * Cards and tables match Dashboard .ewneater-dash-card style; Quick Find green scheme.
+ ==========================================================================*/
+
+.status-actions-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.ewneater-dashboard-wrap .ewneater-admin-section .ewneater-dash-card,
+.ewneater-dashboard-wrap .status-actions-container .card,
+.ewneater-dashboard-wrap #latest-entries-table.card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #2f9e65;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    padding: 22px;
+    transition: box-shadow 0.2s ease;
+    flex: 1;
+    min-width: 0;
+}
+.ewneater-dashboard-wrap .ewneater-admin-section .ewneater-dash-card:hover,
+.ewneater-dashboard-wrap .status-actions-container .card:hover,
+.ewneater-dashboard-wrap #latest-entries-table.card:hover {
+    box-shadow: 0 8px 24px rgba(47, 158, 101, 0.12);
+}
+.ewneater-dashboard-wrap .ewneater-admin-section .ewneater-dash-card h2,
+.ewneater-dashboard-wrap .status-actions-container .card h2,
+.ewneater-dashboard-wrap #latest-entries-table.card h2 {
+    margin: 0 0 14px;
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #1f7a4a;
+}
+.ewneater-dashboard-wrap .ewneater-admin-section .ewneater-dash-card h3,
+.ewneater-dashboard-wrap .status-actions-container .card h3,
+.ewneater-dashboard-wrap #latest-entries-table.card h3 {
+    margin: 15px 0 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+}
+.ewneater-dashboard-wrap .ewneater-admin-table,
+.ewneater-dashboard-wrap .wp-list-table {
+    margin-top: 10px;
+    width: 100%;
+    font-size: 12px;
+    font-family: monospace;
+    border-collapse: collapse;
+}
+.ewneater-dashboard-wrap .ewneater-admin-table thead th,
+.ewneater-dashboard-wrap .wp-list-table thead th {
+    background: linear-gradient(180deg, #f0fdf4 0%, #dcfce7 100%);
+    color: #166534;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid #bbf7d0;
+}
+.ewneater-dashboard-wrap .ewneater-admin-table td,
+.ewneater-dashboard-wrap .wp-list-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #f1f5f9;
+    background: #fff;
+}
+.ewneater-dashboard-wrap .ewneater-admin-table tbody tr:nth-child(even) td,
+.ewneater-dashboard-wrap .wp-list-table tbody tr:nth-child(even) td {
+    background: #fafafa;
+}
+.ewneater-dashboard-wrap .ewneater-admin-table tbody tr:hover td,
+.ewneater-dashboard-wrap .wp-list-table tbody tr:hover td {
+    background: rgba(47, 158, 101, 0.06);
+}
+.ewneater-dashboard-wrap .ewneater-admin-table tbody tr:nth-child(even):hover td,
+.ewneater-dashboard-wrap .wp-list-table tbody tr:nth-child(even):hover td {
+    background: rgba(47, 158, 101, 0.08);
+}
+
+/*==========================================================================
+ * PROGRESS BAR
+ *
+ * Shown inside the Index Status card while an index build is running.
+ * Uses the Quick Find green scheme to match the rest of the page.
+ ==========================================================================*/
+.ewneater-progress-bar-container {
+    width: 100%;
+    height: 20px;
+    background-color: #e9f5ef;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.ewneater-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #2f9e65 0%, #1f7a4a 100%);
+    width: 0%;
+    transition: width 0.4s ease;
+    border-radius: 10px;
+}
+
+.ewneater-progress-status {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1f7a4a;
+    background: #e9f5ef;
+    border: 1px solid #bbf7d0;
+    border-radius: 6px;
+    padding: 5px 12px;
+    margin-top: 4px;
+    text-align: center;
+    min-height: 1.4em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Search row in Latest Updated Entries: stays one line on all screen sizes */
+.ewneater-entries-search-form {
+    flex-wrap: nowrap;
+    max-width: 560px;
+}
+
+.ewneater-entries-search-field {
+    flex: 1;
+    min-width: 0;
+}
+
+.ewneater-entries-search-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 782px) {
+    .ewneater-entries-search-form {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 782px) {
+    .status-actions-container {
+        flex-direction: column;
+    }
+
+    .ewneater-dashboard-wrap .status-actions-container .card {
+        margin-top: 10px;
+    }
+
+    .ewneater-dashboard-wrap .ewneater-admin-table,
+    .ewneater-dashboard-wrap .wp-list-table {
+        font-size: 11px;
+    }
+
+    .ewneater-dashboard-wrap .ewneater-admin-table th:nth-child(1),
+    .ewneater-dashboard-wrap .ewneater-admin-table td:nth-child(1),
+    .ewneater-dashboard-wrap .wp-list-table th:nth-child(1),
+    .ewneater-dashboard-wrap .wp-list-table td:nth-child(1) {
+        width: 50px !important;
+        min-width: 50px !important;
+    }
+
+    .ewneater-dashboard-wrap .ewneater-admin-table th:nth-child(2),
+    .ewneater-dashboard-wrap .ewneater-admin-table td:nth-child(2),
+    .ewneater-dashboard-wrap .wp-list-table th:nth-child(2),
+    .ewneater-dashboard-wrap .wp-list-table td:nth-child(2) {
+        width: 60px !important;
+        min-width: 60px !important;
+    }
+
+    .ewneater-dashboard-wrap .ewneater-admin-table th:nth-child(3),
+    .ewneater-dashboard-wrap .ewneater-admin-table td:nth-child(3),
+    .ewneater-dashboard-wrap .wp-list-table th:nth-child(3),
+    .ewneater-dashboard-wrap .wp-list-table td:nth-child(3) {
+        width: 70px !important;
+        min-width: 70px !important;
+    }
+
+    .ewneater-dashboard-wrap .ewneater-admin-table th:nth-child(4),
+    .ewneater-dashboard-wrap .ewneater-admin-table td:nth-child(4),
+    .ewneater-dashboard-wrap .wp-list-table th:nth-child(4),
+    .ewneater-dashboard-wrap .wp-list-table td:nth-child(4) {
+        min-width: 150px !important;
+        max-width: 200px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .ewneater-dashboard-wrap .ewneater-admin-table th:nth-child(5),
+    .ewneater-dashboard-wrap .ewneater-admin-table td:nth-child(5),
+    .ewneater-dashboard-wrap .wp-list-table th:nth-child(5),
+    .ewneater-dashboard-wrap .wp-list-table td:nth-child(5) {
+        width: 120px !important;
+        min-width: 120px !important;
+    }
+
+    .metadata-preview {
+        font-size: 10px;
+        line-height: 1.3;
+    }
+
+    .show-more {
+        font-size: 9px !important;
+    }
+}

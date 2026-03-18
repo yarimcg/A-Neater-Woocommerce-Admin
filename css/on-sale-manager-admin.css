@@ -1,0 +1,347 @@
+/*==========================================================================
+ * ON SALE MANAGER – ADMIN PAGE
+ *
+ * Styles for the On Sale Manager admin page:
+ * - Page layout and intro
+ * - Toolbar, filter panel, and filter badges
+ * - Product table columns and badges
+ * - Scroll wrapper for horizontal overflow
+ * - Mobile responsive adjustments
+ ==========================================================================*/
+
+/* --------------------------------
+ * Page layout
+ * -------------------------------- */
+/* .bsf-osm-wrap: no max-width – inherits full-width from .ewneater-admin-page--full-width. Used as JS hook for toolbar. */
+
+.bsf-osm-intro {
+    margin-bottom: 16px;
+    color: #3c434a;
+}
+
+.bsf-osm-view-sale-link {
+    display: inline-block;
+    margin-left: 14px;
+    font-size: 13px;
+    font-weight: 400;
+    vertical-align: middle;
+    color: #ea580c;
+    text-decoration: none;
+    border: 1px solid #ea580c;
+    border-radius: 3px;
+    padding: 2px 10px;
+    line-height: 1.8;
+}
+.bsf-osm-view-sale-link:hover {
+    background: #ea580c;
+    color: #fff;
+}
+
+/* --------------------------------
+ * Toolbar
+ * -------------------------------- */
+.bsf-osm-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.bsf-osm-toolbar-sep {
+    display: inline-block;
+    width: 1px;
+    height: 24px;
+    background: #dcdcde;
+    margin: 0 4px;
+    vertical-align: middle;
+}
+
+.bsf-osm-count {
+    margin-left: 8px;
+    color: #646970;
+    font-size: 13px;
+}
+
+/* --------------------------------
+ * Filter toggle button
+ * -------------------------------- */
+.bsf-osm-filter-toggle {
+    padding: 0 12px !important;
+}
+.bsf-osm-filter-toggle.is-active {
+    background: #f6f7f7 !important;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Showing count in toolbar */
+.bsf-osm-filters-showing {
+    font-size: 12px;
+    color: #646970;
+    font-weight: 600;
+}
+
+/* --------------------------------
+ * Filter panel
+ * -------------------------------- */
+.bsf-osm-filters {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.bsf-osm-filters-body {
+    display: flex;
+    padding: 14px 16px;
+    gap: 28px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.bsf-osm-filter-group {
+    min-width: 150px;
+}
+
+.bsf-osm-filter-group-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #646970;
+    margin-bottom: 6px;
+}
+
+.bsf-osm-filter-group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #1d2327;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.bsf-osm-filter-group input[type="checkbox"] {
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Active filter: highlight the group label */
+.bsf-osm-filter-group.has-active .bsf-osm-filter-group-label {
+    color: #ea580c;
+}
+
+/* Reset button inside panel */
+.bsf-osm-filter-reset-wrap {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 2px;
+}
+
+.bsf-osm-filters-reset {
+    font-size: 12px;
+    color: #b32d2e;
+    background: none;
+    border: 1px solid #b32d2e;
+    border-radius: 3px;
+    padding: 3px 8px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.bsf-osm-filters-reset:hover {
+    background: #fce8e8;
+}
+
+/* --------------------------------
+ * Table scroll wrapper
+ * -------------------------------- */
+.bsf-osm-scroll-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+}
+
+.bsf-osm-table {
+    min-width: 1200px;
+    table-layout: auto;
+}
+
+/* --------------------------------
+ * Table columns
+ * -------------------------------- */
+.bsf-osm-table .col-check      { width: 80px;  text-align: center; vertical-align: top; padding-top: 10px; }
+.bsf-osm-table .col-price       { width: 130px; }
+.bsf-osm-table .col-tags,
+.bsf-osm-table .col-categories  { width: 170px; }
+.bsf-osm-table .col-status,
+.bsf-osm-table .col-visibility  { width: 120px; text-align: center; }
+.bsf-osm-table .col-active,
+.bsf-osm-table .col-cat         { width: 130px; text-align: center; }
+.bsf-osm-table .col-product     { min-width: 280px; }
+.bsf-osm-table .col-product a   { font-size: 14px; font-weight: 600; }
+
+/* --------------------------------
+ * Checkbox
+ * -------------------------------- */
+.bsf-osm-checkbox-label {
+    display: flex;
+    justify-content: center;
+}
+.bsf-osm-checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* --------------------------------
+ * Product ID
+ * -------------------------------- */
+.bsf-osm-id {
+    display: block;
+    color: #999;
+    font-size: 11px;
+}
+
+/* --------------------------------
+ * Tag & category pills
+ * -------------------------------- */
+.bsf-osm-tag {
+    display: inline-block;
+    margin: 2px 2px 2px 0;
+    padding: 2px 7px;
+    background: #e8f0fe;
+    color: #1a3a6b;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.bsf-osm-cat {
+    background: #fef3e2;
+    color: #7a4100;
+}
+
+.bsf-osm-no-tags {
+    color: #aaa;
+}
+
+/* --------------------------------
+ * Sale price
+ * -------------------------------- */
+.bsf-osm-sale-price {
+    color: #c0392b;
+    font-weight: 600;
+}
+
+/* --------------------------------
+ * Approved row highlight
+ * -------------------------------- */
+.bsf-osm-approved td {
+    background-color: #fff7ed !important;
+}
+
+/* --------------------------------
+ * Status / boolean badges
+ * -------------------------------- */
+.bsf-osm-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.bsf-osm-badge--yes         { background: #d4edda; color: #1e6633; }
+.bsf-osm-badge--no          { background: #f0f0f1; color: #646970; }
+.bsf-osm-badge--published   { background: #d4edda; color: #1e6633; }
+.bsf-osm-badge--unpublished { background: #fce8e8; color: #8b1a1a; }
+.bsf-osm-badge--public      { background: #e8f4fd; color: #1a5276; }
+.bsf-osm-badge--private     { background: #fef9e7; color: #7d6608; }
+.bsf-osm-badge--password    { background: #f5eef8; color: #6c3483; }
+
+/* --------------------------------
+ * Submit area
+ * -------------------------------- */
+.bsf-osm-submit {
+    margin-top: 20px;
+}
+
+.bsf-osm-save-help {
+    margin-top: 8px;
+    color: #646970;
+    font-size: 13px;
+    max-width: 560px;
+}
+
+/* --------------------------------
+ * First-time Bulk Sync section
+ * -------------------------------- */
+.bsf-osm-bulk-sync-wrap {
+    margin-top: 40px;
+    padding: 20px 24px;
+    background: #fafafa;
+    border: 1px solid #dcdcde;
+    border-left: 4px solid #ea580c;
+    border-radius: 4px;
+    max-width: 640px;
+}
+
+.bsf-osm-bulk-sync-heading {
+    margin: 0 0 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #c2410c;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.bsf-osm-bulk-sync-heading .dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    color: #ea580c;
+}
+
+.bsf-osm-bulk-sync-desc {
+    margin: 0 0 10px;
+    color: #3c434a;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.bsf-osm-bulk-sync-notes {
+    margin: 0 0 16px;
+    padding-left: 20px;
+    color: #646970;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* --------------------------------
+ * Hidden rows (filter applied)
+ * -------------------------------- */
+.bsf-osm-row-hidden {
+    display: none !important;
+}
+
+/* --------------------------------
+ * Mobile
+ * -------------------------------- */
+@media screen and (max-width: 782px) {
+    .bsf-osm-toolbar {
+        flex-wrap: wrap;
+    }
+    .bsf-osm-table {
+        font-size: 12px;
+    }
+    .bsf-osm-table .col-product a {
+        font-size: 13px;
+    }
+    .bsf-osm-badge {
+        font-size: 11px;
+        padding: 2px 6px;
+    }
+}
