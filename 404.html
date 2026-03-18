@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>404 — A Neater WooCommerce Admin</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <style>
+      .nf {
+        min-height: 70vh;
+        display: grid;
+        place-items: center;
+        padding: 46px 0;
+      }
+      .nf__card {
+        border: 1px solid var(--line);
+        background: color-mix(in srgb, var(--surface) 72%, transparent);
+        border-radius: var(--radius2);
+        box-shadow: var(--shadow);
+        padding: 22px;
+        max-width: 680px;
+        width: 100%;
+      }
+      .nf__kicker {
+        margin: 0 0 10px;
+        color: var(--muted);
+      }
+      .nf__title {
+        margin: 0 0 10px;
+        letter-spacing: -0.03em;
+        font-size: clamp(1.8rem, 3vw, 2.4rem);
+        line-height: 1.08;
+      }
+      .nf__copy {
+        margin: 0 0 18px;
+        color: var(--muted);
+      }
+      .nf__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="topbar" role="banner">
+      <div class="container topbar__inner">
+        <a class="brand" href="./" aria-label="A Neater WooCommerce Admin home">
+          <span class="brand__mark" aria-hidden="true">✓</span>
+          <span class="brand__text">A Neater Admin</span>
+        </a>
+        <div class="topbar__cta">
+          <a class="btn btn--ghost" href="./">Home</a>
+          <button class="btn btn--icon" type="button" data-theme-toggle aria-label="Toggle theme">
+            <span aria-hidden="true">◐</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="main" role="main">
+      <section class="nf">
+        <div class="container">
+          <div class="nf__card">
+            <p class="nf__kicker">404</p>
+            <h1 class="nf__title">That page doesn’t exist.</h1>
+            <p class="nf__copy">
+              If you were following a link, it may have moved. Head back to the homepage to find what you need.
+            </p>
+            <div class="nf__actions">
+              <a class="btn btn--primary" href="./">Go to homepage</a>
+              <a class="btn btn--secondary" href="./#features">View features</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./assets/app.js" defer></script>
+  </body>
+</html>
+

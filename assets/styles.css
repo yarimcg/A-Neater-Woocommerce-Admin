@@ -122,6 +122,34 @@ kbd{
 .nav__link:hover{background:var(--surface);color:var(--text)}
 .topbar__cta{display:flex;align-items:center;gap:10px}
 
+.navm{display:none;position:relative}
+.navm__btn{list-style:none}
+.navm summary::-webkit-details-marker{display:none}
+.navm[open] .navm__btn{background:var(--surface2)}
+.navm__panel{
+  position:absolute;
+  right:0;
+  top: calc(100% + 10px);
+  min-width: 210px;
+  border-radius: 16px;
+  border:1px solid var(--line);
+  background: color-mix(in srgb, var(--bg) 70%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--shadow);
+  padding: 10px;
+  display:flex;
+  flex-direction:column;
+  gap: 6px;
+}
+.navm__link{
+  text-decoration:none;
+  padding:12px 12px;
+  border-radius: 12px;
+  color:var(--muted);
+}
+.navm__link:hover{background:var(--surface);color:var(--text)}
+
 .btn{
   border:1px solid var(--line);
   background:var(--surface);
@@ -392,6 +420,7 @@ kbd{
 }
 @media (max-width: 640px){
   .nav{display:none}
+  .navm{display:block}
   .grid{grid-template-columns:1fr}
   .ba__grid{grid-template-columns:1fr}
   .hero__metaItem{min-width:unset;width:100%}

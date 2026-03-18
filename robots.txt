@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://a-neater-woocommerce-admin.pages.dev/sitemap.xml
